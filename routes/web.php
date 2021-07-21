@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('personalacademico', PersonalAcademicoController::class);
+Route::post('/addingpersonalacademico', [PersonalAcademicoController::class, 'store'])->name('add.PersonalAcademico');
 
 Route::get('/', function () {
     return view('welcome');

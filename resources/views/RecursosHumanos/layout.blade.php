@@ -155,7 +155,7 @@
                         <li class="nav-item active">
                             <a class="text-align-center" href="" >
                                 <i class="fas fa-home"></i>
-                            <p class="ProcesoAnalitico">Proceso Analitico <br> Organizacional</p>
+                            <p class="ProcesoAnalitico">Estadistica</p>
                             </a>
                        
                         </li>
@@ -164,7 +164,7 @@
                             <span class="sidebar-mini-icon">
                                 <i class="fa fa-ellipsis-h"></i>
                             </span>
-                            <h4 class="text-section">Components</h4>
+                            <h4 class="text-section">VPDS VICERECTORADO DE PLANIFICACIÓN Y DESARROLLO SOCIAL</h4>
                         </li>
 
 
@@ -172,8 +172,8 @@
                                                   
                     <li class="nav-item ">
                         <a href="/debilidades">
-                            <i class="fas fa-minus-circle"></i>
-                            <p>Debilidades</p>
+                            <i class="fas fa-user-circle"></i>
+                            <p>Recursos humanos</p>
                             <span class="caret"></span>
                         </a>
 
@@ -182,43 +182,20 @@
              
                     <li class="nav-item">
                         <a href="/oportunidades">
-                            <i class="fas fa-magic"></i>
-                            <p>Oportunidades</p>
+                            <i class="fas fa-address-card"></i>
+                            <p>ARSE</p>
                             <span class="caret"></span>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a href="/fortaleza">
-                            <i class="fas fa-dumbbell"></i>
-                            <p>Fortalezas</p>
+                            <i class="fas fa-graduation-cap"></i>
+                            <p>Estudios Avanzados</p>
                             <span class="caret"></span>
                         </a>
                     </li>
 
-                    <li class="nav-item">
-                        <a href="/amenazas">
-                            <i class="fas fa-exclamation-triangle"></i>
-                            <p>Amenazas</p>
-                            <span class="caret"></span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="#sidebarLayouts">
-                            <i class="fas fa-envelope"></i>
-                            <p>Bandeja de entrada</p>
-                            <span class="caret"></span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="/matrizdafo">
-                            <i class="far fa-chart-bar"></i>
-                            <p>MatrizDAFO</p>
-                            <span class="caret"></span>
-                        </a>
-                    </li>
 
 
                         {{-- @endrole --}}

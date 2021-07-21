@@ -141,3 +141,19 @@ column on Fa can grow without any problem ----*/
 #FaFortaleza div{
     margin-bottom: .4rem;
 }
+
+.nro_item{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin-left: .6rem;
+}
+
+.spanbold{
+    font-weight: bold;
+}
