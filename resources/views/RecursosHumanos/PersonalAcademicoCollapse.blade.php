@@ -146,14 +146,28 @@
             
 
 
-            <table id="fa_table" class="display table table-striped table-hover table-boder-radius serial">
+            <table id="PersonalAcademico" class="display table table-striped table-hover table-boder-radius serial nowrap" style="width: 100%">
                 <thead>
                     {{-- insertion of items --}}
                     <tr>
                         <th>Nº ítem</th>
-                        <th>Descripción</th>   
-                        <th>Fecha</th>
-                        <th>Acciones</th>                                         
+                        <th>Codígo de la Institucaón</th>
+                        <th>País</th>
+                        <th>Documento de Identificación</th>
+                        <th>Número de Cédula/Pasaporte</th>
+                        <th>Apellidos</th>
+                        <th>Nombres</th>
+                        <th>Sexo</th>
+                        <th>Fecha de Nacimiento</th>
+                        <th>Fecha de Ingreso</th>
+                        <th>Condición Laboral</th>
+                        <th>Categoría</th>
+                        <th>Categoría Inicial</th>
+                        <th>Tiempo de Dedicación</th>
+                        <th>Título Académico</th>
+                        <th>Profesión</th>
+                        <th>Adscripción</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 {{--database data subtraction --}}
@@ -165,35 +179,32 @@
                    <td class="nro_item_center" id="tr_">
                       <div id="" class="nro_item"> </div>
                     </td>
+                       
+                        <td>{{$P_Academico->Institucion_code}}</td>
+                        <td>{{$P_Academico->Pais}}</td>
+                        <td>{{$P_Academico->Documento_De_Identificacion}}</td>
+                        <td>{{$P_Academico->CI}}</td>
+                        <td>{{$P_Academico->Apellidos}}</td>
+                        <td>{{$P_Academico->Nombres}}</td>
+                        <td>{{$P_Academico->Sexo}}</td>
+                        <td>{{$P_Academico->Fecha_Nacimiento}}</td>
+                        <td>{{$P_Academico->Fecha_Ingreso}}</td>
+                        <td>{{$P_Academico->Condicion_Laboral}}</td>
+                        <td>{{$P_Academico->Categoria}}</td>
+                        <td>{{$P_Academico->Categoria_Inicial}}</td>
+                        <td>{{$P_Academico->Tiempo_Dedicacion}}</td>
+                        <td>{{$P_Academico->TituloAcademico}}</td>
+                        <td>{{$P_Academico->Profesion}}</td>
+                        <td>{{$P_Academico->Adscripcion}}</td>
+
                     
-                    <td>
-                    <span class="spanbold">Código de la institución:</span> {{$P_Academico->Institucion_code}} <br>
-                    <span class="spanbold">País:</span> {{$P_Academico->Pais}} <br>
-                    <span class="spanbold">Documento de Identificación:</span> {{$P_Academico->Documento_De_Identificacion}} <br>
-                    <span class="spanbold">Numero de Cédula/Pasaporte:</span> {{$P_Academico->CI}} <br>
-                    <span class="spanbold">Apellidos:</span> {{$P_Academico->Apellidos}} <br>
-                    <span class="spanbold">Nombres:</span> {{$P_Academico->Nombres}}  <br>
-                    <span class="spanbold">Sexo: </span>  {{$P_Academico->Sexo}}    <br>
-                    <span class="spanbold">Fecha de Nacimiento:</span> {{$P_Academico->Fecha_Nacimiento}}  <br>
-                    <span class="spanbold">Fecha de Ingreso:</span> {{$P_Academico->Fecha_Ingreso}}  <br>
-                    <span class="spanbold">Condición Laboral:</span> {{$P_Academico->Condicion_Laboral}}  <br>
-                    <span class="spanbold">Categoría:</span> {{$P_Academico->Categoria}}  <br>
-                    <span class="spanbold">Categoría Inicial:</span> {{$P_Academico->Categoria_Inicial}}  <br>
-                    <span class="spanbold">Tiempo de Dedicación:</span> {{$P_Academico->Tiempo_Dedicacion}}  <br>
-                    <span class="spanbold">Título Académico:</span> {{$P_Academico->TituloAcademico}}  <br>
-                    <span class="spanbold">Profesión:</span> {{$P_Academico->Profesion}}  <br>
-                    <span class="spanbold">Adscripción:</span> {{$P_Academico->Adscripcion}}  <br><br>
-                    </td>
-               
-                    <td>{{$P_Academico->created_at->format('d/m/Y')}}</td>
-               
 
                     <td>
                         <form action="{{route ('personalacademico.destroy', $P_Academico->id)}}" method="POST">
                         <div class="form-button-action">    
-                        {{-- comment
-                         <a href="#" class="btn btn-link btn-primary" title="Editar" data-toggle="modal"  data-target="#editFortaleza{{$fortaleza->id}}"><i class="fa fa-edit"></i></a>
-                             --}}
+                        
+                         <a href="#" class="btn btn-link btn-primary" title="Editar" data-toggle="modal"  data-target="#editPersonalAcademico{{$P_Academico->id}}"><i class="fa fa-edit"></i></a>
+                          
                             @csrf
                             @method('DELETE')
                         <button class="btn btn-link btn-danger" title="Eliminar" type="submit" >
