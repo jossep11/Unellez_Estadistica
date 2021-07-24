@@ -157,3 +157,7 @@ column on Fa can grow without any problem ----*/
 .spanbold{
     font-weight: bold;
 }
+
+.display{
+    text-align: center;
+}

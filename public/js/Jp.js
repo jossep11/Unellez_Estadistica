@@ -105,6 +105,37 @@ else{
     })
 }
 
+$(document).ready(function() {
+    $('#PersonalAcademico').DataTable({   
+        scrollX:        true,
+        lengthMenu: [[10, 25, 50, -1], [10, 25, 50, 'Todos']], 
+        "ordering": false,             
+        language: {
+            search: "Buscar:",
+
+        paginate:{previous:"Anterior", next:"Siguiente" },
+
+        lengthMenu: "Ver _MENU_ registros",
+
+        info: "Mostrando _START_-_END_ de _TOTAL_ registros",
+
+        zeroRecords: "No hay registros encontrados",
+
+        infoEmpty: "",
+
+        infoFiltered:"(Filtrado de _MAX_ registros)",
+           
+        },
+        
+    
+
+    });   
+
+});
+
+
+
+
 
 //Here I check what check from amenazas is clicked  --jossep11 (jp)
 AmenazaCheck.forEach(function (valor, indice, item1) {  
