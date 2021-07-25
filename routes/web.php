@@ -1,7 +1,11 @@
 <?php
 
+use App\Exports\UsersExport;
 use App\Http\Controllers\PersonalAcademicoController;
 use Illuminate\Support\Facades\Route;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ProductsExport;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +21,13 @@ use Illuminate\Support\Facades\Route;
 Route::resource('personalacademico', PersonalAcademicoController::class);
 Route::post('/addingpersonalacademico', [PersonalAcademicoController::class, 'store'])->name('add.PersonalAcademico');
 
+Route::get('/xxx', [PersonalAcademicoController::class, 'export'])->name('export.x');
+
+
 Route::get('/', function () {
     return view('welcome');
+
+    
+    
+
 });

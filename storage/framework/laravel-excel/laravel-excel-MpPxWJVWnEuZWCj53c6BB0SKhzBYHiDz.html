@@ -1,0 +1,487 @@
+<div class="card">
+    <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <div class="span-icon">
+            <i class="fas fa-user-graduate"></i>
+
+        </div>
+        <div class="span-title">
+           Personal Académico 
+        </div>
+        <div class="span-mode"></div>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+           
+            <div class="Header_InsideCollapse">
+                <div class="barra">
+                <h1 id="tablax">Datos del Personal Académico</h1>    
+                <!-- Button trigger modal -->
+                <a href="#" class="btn_agregar_estrategia" data-toggle="modal" data-target="#AgregarPersonalAcademico"> <i class="fas fa-plus"> Añadir nuevo</i></a>
+                
+                </div>
+            </div>
+
+
+
+   
+                <!-- Modal data insertion  -->
+                <div class="modal fade" id="AgregarPersonalAcademico" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Añadir Personal Académico</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                           
+                            <div class="modal-body">
+                        
+                                <form id="InsertPersonalAcademico" > 
+                                    <input type="hidden" name="_token" value="RJKCKZWt1NU2w9n245ZZANFWxfM6o84W0WLqdAVA">
+
+   
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="InputCod_Institucion">Código de la institución</label>
+                                        <input type="text" class="form-control" name="InputCod_Institucion" placeholder="Código de la institución">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="Fecha">Fecha de ingreso</label>
+                                        <input type="date" class="form-control" name="Fecha_Ingreso" placeholder="Fecha de ingreso">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="Pais">País</label>
+                                        <input type="text" class="form-control" name="pais_p_academico" placeholder="País">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="CondicionLaboral">Condición Laboral</label>
+                                        <input type="text" class="form-control" name="CondicionLaboral" placeholder="Condición Laboral">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="Documento_ID">Documento de Identificación</label>
+                                        <input type="text" class="form-control" name="Documento_ID" placeholder="Documento de Identificación">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="CategoriaP_A">Categoría</label>
+                                        <input type="text" class="form-control" name="CategoriaP_A" placeholder="Categoria">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="NroCedula">Número de Cédulo/Pasaporte</label>
+                                        <input type="text" class="form-control" name="NroCedula" placeholder="Ejemplo: V-1234567">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="Cat_Inicial">Categória Inicial</label>
+                                        <input type="text" class="form-control" name="Cat_Inicial" placeholder="Categória Inicial">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="Nombres">Nombres</label>
+                                        <input type="text" class="form-control" name="Nombres_P_Academico" placeholder="Ejem: Jossep Argenis">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="Apellidos">Apellidos</label>
+                                        <input type="text" class="form-control" name="Apellidos" placeholder="Ejem:Paredes Valero">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="TiempodeDedicacion">Tiempo de Dedicación</label>
+                                        <input type="text" class="form-control" name="TiempoDedicacion" placeholder="Tiempo de Dedicación">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="TiempoAcademico">Título Académico</label>
+                                        <input type="text" class="form-control" name="TituloAcademico" placeholder="Título Académico">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="inputPassword4">Sexo</label>
+                                        <select  class="custom-select my-1 mr-sm-2" name="Sexo_PersonalAcademico" required>
+
+                                            <option selected>Seleccionar </option>
+                                            <option value="1">Masculino</option>
+                                            <option value="2">Femenino</option>
+                                        </select>
+                                       
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="Profesion">Profesión</label>
+                                        <input type="text" class="form-control" name="Profesion" placeholder="Profesión">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="FNacimiento">Fecha de Nacimiento</label>
+                                        <input type="date" class="form-control" name="FNacimiento" placeholder="Password">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="Adscripción">Adscripción</label>
+                                        <input type="Adscripción" class="form-control" name="Adscripción" placeholder="Adscripción">
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-primary" id="butsave" >Añadir</button>
+                                    </div>
+    
+                                </form>
+                            
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            
+
+
+            <table id="PersonalAcademico" class="display table table-striped table-hover table-boder-radius serial nowrap" style="width: 100%">
+                <thead>
+                    
+                    <tr>
+                        <th>Nº ítem</th>
+                        <th>Codígo de la Institucaón</th>
+                        <th>País</th>
+                        <th>Documento de Identificación</th>
+                        <th>Número de Cédula/Pasaporte</th>
+                        <th>Apellidos</th>
+                        <th>Nombres</th>
+                        <th>Sexo</th>
+                        <th>Fecha de Nacimiento</th>
+                        <th>Fecha de Ingreso</th>
+                        <th>Condición Laboral</th>
+                        <th>Categoría</th>
+                        <th>Categoría Inicial</th>
+                        <th>Tiempo de Dedicación</th>
+                        <th>Título Académico</th>
+                        <th>Profesión</th>
+                        <th>Adscripción</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                
+                <tbody>         
+                
+              
+                                <tr>
+                   <td class="nro_item_center" id="tr_">
+                      <div id="" class="nro_item"> </div>
+                    </td>
+                       
+                        <td>12</td>
+                        <td>12</td>
+                        <td>21</td>
+                        <td>12</td>
+                        <td>12</td>
+                        <td>12</td>
+                        <td>1</td>
+                        <td>2021-07-30</td>
+                        <td>2021-07-09</td>
+                        <td>12</td>
+                        <td>12</td>
+                        <td>12</td>
+                        <td>12</td>
+                        <td>12</td>
+                        <td>12</td>
+                        <td>12</td>
+
+                    
+
+                    <td>
+                        <form action="http://127.0.0.1:8000/personalacademico/5" method="POST">
+                        <div class="form-button-action">    
+                        
+                         <a href="#" class="btn btn-link btn-primary" title="Editar" data-toggle="modal"  data-target="#editPersonalAcademico5"><i class="fa fa-edit"></i></a>
+                          
+                            <input type="hidden" name="_token" value="RJKCKZWt1NU2w9n245ZZANFWxfM6o84W0WLqdAVA">                            <input type="hidden" name="_method" value="DELETE">                        <button class="btn btn-link btn-danger" title="Eliminar" type="submit" >
+                            <i class="fa fa-times"></i>
+                        </button>
+                        
+                        </div>
+                        </form>
+        
+                    </td>
+
+
+
+                </tr>
+
+                
+
+                                <tr>
+                   <td class="nro_item_center" id="tr_">
+                      <div id="" class="nro_item"> </div>
+                    </td>
+                       
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>1</td>
+                        <td>2021-07-16</td>
+                        <td>2021-07-08</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+
+                    
+
+                    <td>
+                        <form action="http://127.0.0.1:8000/personalacademico/7" method="POST">
+                        <div class="form-button-action">    
+                        
+                         <a href="#" class="btn btn-link btn-primary" title="Editar" data-toggle="modal"  data-target="#editPersonalAcademico7"><i class="fa fa-edit"></i></a>
+                          
+                            <input type="hidden" name="_token" value="RJKCKZWt1NU2w9n245ZZANFWxfM6o84W0WLqdAVA">                            <input type="hidden" name="_method" value="DELETE">                        <button class="btn btn-link btn-danger" title="Eliminar" type="submit" >
+                            <i class="fa fa-times"></i>
+                        </button>
+                        
+                        </div>
+                        </form>
+        
+                    </td>
+
+
+
+                </tr>
+
+                
+
+                                <tr>
+                   <td class="nro_item_center" id="tr_">
+                      <div id="" class="nro_item"> </div>
+                    </td>
+                       
+                        <td>123</td>
+                        <td>eqwe</td>
+                        <td>weqwe</td>
+                        <td>qweq</td>
+                        <td>qwe</td>
+                        <td>qwe</td>
+                        <td>1</td>
+                        <td>2021-07-23</td>
+                        <td>2021-07-01</td>
+                        <td>qweq</td>
+                        <td>qwe</td>
+                        <td>weqw</td>
+                        <td>qwe</td>
+                        <td>qwe</td>
+                        <td>qwe</td>
+                        <td>qwe</td>
+
+                    
+
+                    <td>
+                        <form action="http://127.0.0.1:8000/personalacademico/8" method="POST">
+                        <div class="form-button-action">    
+                        
+                         <a href="#" class="btn btn-link btn-primary" title="Editar" data-toggle="modal"  data-target="#editPersonalAcademico8"><i class="fa fa-edit"></i></a>
+                          
+                            <input type="hidden" name="_token" value="RJKCKZWt1NU2w9n245ZZANFWxfM6o84W0WLqdAVA">                            <input type="hidden" name="_method" value="DELETE">                        <button class="btn btn-link btn-danger" title="Eliminar" type="submit" >
+                            <i class="fa fa-times"></i>
+                        </button>
+                        
+                        </div>
+                        </form>
+        
+                    </td>
+
+
+
+                </tr>
+
+                
+
+                                <tr>
+                   <td class="nro_item_center" id="tr_">
+                      <div id="" class="nro_item"> </div>
+                    </td>
+                       
+                        <td>12</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>1</td>
+                        <td>2021-07-23</td>
+                        <td>2021-07-14</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>1233</td>
+
+                    
+
+                    <td>
+                        <form action="http://127.0.0.1:8000/personalacademico/9" method="POST">
+                        <div class="form-button-action">    
+                        
+                         <a href="#" class="btn btn-link btn-primary" title="Editar" data-toggle="modal"  data-target="#editPersonalAcademico9"><i class="fa fa-edit"></i></a>
+                          
+                            <input type="hidden" name="_token" value="RJKCKZWt1NU2w9n245ZZANFWxfM6o84W0WLqdAVA">                            <input type="hidden" name="_method" value="DELETE">                        <button class="btn btn-link btn-danger" title="Eliminar" type="submit" >
+                            <i class="fa fa-times"></i>
+                        </button>
+                        
+                        </div>
+                        </form>
+        
+                    </td>
+
+
+
+                </tr>
+
+                
+
+                                <tr>
+                   <td class="nro_item_center" id="tr_">
+                      <div id="" class="nro_item"> </div>
+                    </td>
+                       
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>1</td>
+                        <td>2021-07-23</td>
+                        <td>2021-06-28</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+
+                    
+
+                    <td>
+                        <form action="http://127.0.0.1:8000/personalacademico/10" method="POST">
+                        <div class="form-button-action">    
+                        
+                         <a href="#" class="btn btn-link btn-primary" title="Editar" data-toggle="modal"  data-target="#editPersonalAcademico10"><i class="fa fa-edit"></i></a>
+                          
+                            <input type="hidden" name="_token" value="RJKCKZWt1NU2w9n245ZZANFWxfM6o84W0WLqdAVA">                            <input type="hidden" name="_method" value="DELETE">                        <button class="btn btn-link btn-danger" title="Eliminar" type="submit" >
+                            <i class="fa fa-times"></i>
+                        </button>
+                        
+                        </div>
+                        </form>
+        
+                    </td>
+
+
+
+                </tr>
+
+                
+
+                            
+            
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+
+
+    $.ajaxSetup({
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+      });
+    
+
+
+    
+     $('#InsertPersonalAcademico').on('submit', function(e) {
+        e.preventDefault();
+       
+        let InputCod_Institucion = $('input[name=InputCod_Institucion]').val();
+        let Fecha_Ingreso = $('input[name=Fecha_Ingreso]').val();        
+        let CondicionLaboral = $('input[name=CondicionLaboral]').val();
+        let Documento_ID = $('input[name=Documento_ID]').val();
+        let CategoriaP_A = $('input[name=CategoriaP_A]').val();
+        let NroCedula = $('input[name=NroCedula]').val();
+        let Cat_Inicial = $('input[name=Cat_Inicial]').val();
+        let Nombres_P_Academico = $('input[name=Nombres_P_Academico]').val();
+        let Apellidos = $('input[name=Apellidos]').val();
+        let TiempoDedicacion = $('input[name=TiempoDedicacion]').val();
+        let TituloAcademico = $('input[name=TituloAcademico]').val();
+        let Sexo_PersonalAcademico = $('select[name=Sexo_PersonalAcademico]').val();
+        let Profesion = $('input[name=Profesion]').val();
+        let FNacimiento = $('input[name=FNacimiento]').val();
+        let Adscripcion = $('input[name=Adscripción]').val();
+        let Pais = $('input[name=pais_p_academico]').val();
+        
+        
+        //console.log(FNacimiento);
+        
+    
+          /*  $("#butsave").attr("disabled", "disabled"); */
+            $.ajax({
+                url:"http://127.0.0.1:8000/addingpersonalacademico",
+                type: "POST",
+                data: {
+                    InputCod_Institucion: InputCod_Institucion,
+                    CondicionLaboral:CondicionLaboral,
+                    Documento_ID:Documento_ID,
+                    CategoriaP_A:CategoriaP_A,
+                    NroCedula:NroCedula,
+                    Cat_Inicial:Cat_Inicial,
+                    Nombres_P_Academico:Nombres_P_Academico,
+                    Apellidos:Apellidos,
+                    TiempoDedicacion:TiempoDedicacion,
+                    TituloAcademico:TituloAcademico,
+                    Sexo_PersonalAcademico:Sexo_PersonalAcademico,
+                    Profesion:Profesion,
+                    FNacimiento:FNacimiento,
+                    Adscripcion:Adscripcion,  
+                    Pais:Pais,
+                    Fecha_Ingreso:Fecha_Ingreso,
+
+                  
+                },
+    
+                success:function(response){
+                    console.log(response)
+                    window.location.replace("/personalacademico");
+                    
+                }, 
+                    error:function(error){
+                    console.log(error)
+                    alert('data no saved');
+                }    
+         });
+    });
+
+
+
+</script>

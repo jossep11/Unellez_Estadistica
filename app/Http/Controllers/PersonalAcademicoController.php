@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ProductsExport;
 use Illuminate\Http\Request;
 use App\Models\PersonalAcademico;
+use App\Exports\UsersExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PersonalAcademicoController extends Controller
 {
@@ -110,4 +113,14 @@ class PersonalAcademicoController extends Controller
         $PersonalAcademico->delete();
         return redirect('/personalacademico');
     }
+
+
+
+    public function export()  
+    {
+        return Excel::download(new ProductsExport, 'PersonalAcademico.xlsx');
+    }
+
+
+
 }
