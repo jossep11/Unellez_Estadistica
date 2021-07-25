@@ -20,10 +20,10 @@
         <div class="accordion accordion-secondary">
            
             {{-- Personal Academico --}}
-            @include('RecursosHumanos.PersonalAcademicoCollapse')
+            @include('RecursosHumanos.Pregrado.PersonalAcademicoCollapse')
 
            {{-- Personal administrativo y obrero --}}
-           @include('RecursosHumanos.PersonalAyOCollapse')
+           @include('RecursosHumanos.Pregrado.PersonalAyOCollapse')
            
         </div>
 

@@ -6,9 +6,10 @@ use App\Exports\ProductsExport;
 use Illuminate\Http\Request;
 use App\Models\PersonalAcademico;
 use App\Exports\UsersExport;
+use App\Models\PersonalAdm_Obrero;
 use Maatwebsite\Excel\Facades\Excel;
 
-class PersonalAcademicoController extends Controller
+class PersonalAcademicoPreController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +19,9 @@ class PersonalAcademicoController extends Controller
     public function index()
     {
         $PersonalAcademico = PersonalAcademico::all();
-       return view('RecursosHumanos.PersonalAcad')->with('PersonalAcademico', $PersonalAcademico);
+        $PersonalAdm_Obrero= PersonalAdm_Obrero::all();
+       return view('RecursosHumanos.Pregrado.P_Acad_Pregrado')->with('PersonalAcademico', $PersonalAcademico)
+       ->with('PersonalAdm_Obrero', $PersonalAdm_Obrero);
     }
 
     /**
@@ -111,7 +114,7 @@ class PersonalAcademicoController extends Controller
     {
         $PersonalAcademico = PersonalAcademico::find($id);
         $PersonalAcademico->delete();
-        return redirect('/personalacademico');
+        return redirect('/pa_pregrado');
     }
 
 

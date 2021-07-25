@@ -153,7 +153,7 @@
 
                     <ul class="nav nav-primary">
                         <li class="nav-item active">
-                            <a class="text-align-center" href="" >
+                            <a class="text-align-center" href="javascript:void(0);" >
                                 <i class="fas fa-home"></i>
                             <p class="ProcesoAnalitico">Estadistica</p>
                             </a>
@@ -171,11 +171,30 @@
                         {{-- @role('S_Admin|viewer') --}}
                                                   
                     <li class="nav-item ">
-                        <a href="/debilidades">
+                        <a data-toggle="collapse" href="#RecusosHumanos">
                             <i class="fas fa-user-circle"></i>
                             <p>Recursos humanos</p>
                             <span class="caret"></span>
                         </a>
+
+                        <div class="collapse" id="RecusosHumanos">
+                            <ul class="nav nav-collapse">
+
+                                <li>
+                                    <a href="/pa_pregrado">
+                                        <span class="sub-item">Pregrado</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/registropostgrado">
+                                        <span class="sub-item">PostGrado</span>
+                                    </a>
+                                </li>
+                              
+                            </ul>
+                        </div>
+
 
                     </li>
 

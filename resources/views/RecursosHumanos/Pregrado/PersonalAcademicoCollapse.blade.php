@@ -1,7 +1,8 @@
 <div class="card">
     <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
         <div class="span-icon">
-            <i class="fas fa-user-graduate"></i>
+           <i class="fas fa-user-graduate"></i>
+
 
         </div>
         <div class="span-title">
@@ -15,9 +16,9 @@
            
             <div class="Header_InsideCollapse">
                 <div class="barra">
-                <h1 id="tablax">Datos del Personal Académico</h1>    
+                <h1 id="tablax">Tabla de Datos del Personal Académico</h1>    
                 <!-- Button trigger modal -->
-                <a href="#" class="btn_agregar_estrategia" data-toggle="modal" data-target="#AgregarPersonalAcademico"> <i class="fas fa-plus"> Añadir nuevo</i></a>
+                <a href="#" class="btn_agregar_azul" data-toggle="modal" data-target="#AgregarPersonalAcademico"> <i class="fas fa-plus"> Añadir nuevo</i></a>
                 
                 </div>
             </div>
@@ -107,8 +108,8 @@
                                         <select  class="custom-select my-1 mr-sm-2" name="Sexo_PersonalAcademico" required>
 
                                             <option selected>Seleccionar </option>
-                                            <option value="1">Masculino</option>
-                                            <option value="2">Femenino</option>
+                                            <option value="0">Masculino</option>
+                                            <option value="1">Femenino</option>
                                         </select>
                                        
                                     </div>
@@ -132,8 +133,9 @@
 
 
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                                         <button type="submit" class="btn btn-primary" id="butsave" >Añadir</button>
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                       
                                     </div>
     
                                 </form>
@@ -146,7 +148,7 @@
             
 
 
-            <table id="PersonalAcademico" class="display table table-striped table-hover table-boder-radius serial nowrap" style="width: 100%">
+            <table id="basic-datatables0" class="basic-datatables display table table-striped table-hover table-boder-radius serial nowrap" style="width: 100%">
                 <thead>
                     {{-- insertion of items --}}
                     <tr>
@@ -200,7 +202,7 @@
                     
 
                     <td>
-                        <form action="{{route ('personalacademico.destroy', $P_Academico->id)}}" method="POST">
+                        <form action="{{route ('pa_pregrado.destroy', $P_Academico->id)}}" method="POST">
                         <div class="form-button-action">    
                         
                          <a href="#" class="btn btn-link btn-primary" title="Editar" data-toggle="modal"  data-target="#editPersonalAcademico{{$P_Academico->id}}"><i class="fa fa-edit"></i></a>
@@ -271,7 +273,7 @@
     
           /*  $("#butsave").attr("disabled", "disabled"); */
             $.ajax({
-                url:"{{route('add.PersonalAcademico')}}",
+                url:"{{route('add.PersonalAcademicoPregrado')}}",
                 type: "POST",
                 data: {
                     InputCod_Institucion: InputCod_Institucion,
@@ -296,7 +298,7 @@
     
                 success:function(response){
                     console.log(response)
-                    window.location.replace("/personalacademico");
+                    window.location.replace("/pa_pregrado");
                     
                 }, 
                     error:function(error){

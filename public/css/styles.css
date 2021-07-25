@@ -142,7 +142,7 @@ column on Fa can grow without any problem ----*/
     margin-bottom: .4rem;
 }
 
-.nro_item{
+.nro_item, .nro_item1{
     width: 40px;
     height: 40px;
     display: flex;
@@ -162,3 +162,11 @@ column on Fa can grow without any problem ----*/
     text-align: center;
 }
 
+.card{
+    margin-left: 1.4rem;
+    margin-right: 1.4rem;
+}
+
+.barra .btn_agregar_azul{
+    background-color: #1572e8;
+}
