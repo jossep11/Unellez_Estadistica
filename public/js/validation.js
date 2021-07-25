@@ -1,42 +1,34 @@
-let InputEFortaleza = document.querySelectorAll('.Estrategia_Input_F');
+//
 
-//Validation of inputs
-InputEFortaleza.forEach(element => {
-    const RegExp_F = /[f\F\d\s\,]/;
-    
-    const ValidationF = (e) =>{
-       
-        if (!RegExp_F.test(e.key)) {
-            e.preventDefault();           
-       }
-    }
-    element.addEventListener('keypress', ValidationF);
-});
-    
+$('select[name=Documento_ID]').on('click', function(e) {
+let Documento_P_Academico_Pregrado = $('select[name=Documento_ID]').val();
+console.log(Documento_P_Academico_Pregrado)
 
-// with this a send to uppercase anything that is typed on all these inputs
-let Estrategia_Input = document.querySelectorAll('.Estrategia_Input');
-Estrategia_Input.forEach(input => {
-   
-    const inputtouppercase = () =>{
-    input.value=input.value.toUpperCase();
+if(Documento_P_Academico_Pregrado==='C'){
+   let inputnrocedulaPAPregrado = document.querySelector('input[name=NroCedula]');
+   inputnrocedulaPAPregrado.value='';
+   inputnrocedulaPAPregrado.disabled=false;
+
+    $('input#NroCedula').keypress(function (event) {
+        if (event.which < 48 || event.which > 57 || this.value.length === 8) {
+          return false;
+        }
+      });
+    
 }
-   input.addEventListener('keyup', inputtouppercase);
+
+ if(Documento_P_Academico_Pregrado==='P'){
+    let inputnrocedulaPAPregrado = document.querySelector('input[name=NroCedula]');
+    inputnrocedulaPAPregrado.value='';
+    inputnrocedulaPAPregrado.disabled=false;
+    $('input#NroCedula').keypress(function (event) {
+        if (event.which < 48 || event.which > 57 || this.value.length === 9) {
+          return false;
+        }
+      });
+    
+}
+
+
 });
 
-
-
-let InputEAmenaza = document.querySelectorAll('.Estrategia_Input_A');
-
-InputEAmenaza.forEach(element => {
-    const RegExp_A = /[a\A\d\s\,]/;
-    
-    const ValidationA = (e) =>{
-       
-        if (!RegExp_A.test(e.key)) {
-            e.preventDefault();           
-       }
-    }
-    element.addEventListener('keypress', ValidationA);
-});
-    

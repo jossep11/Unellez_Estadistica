@@ -65,17 +65,23 @@
 
                                     <div class="form-group col-md-6">
                                         <label for="Documento_ID">Documento de Identificación</label>
-                                        <input type="text" class="form-control" name="Documento_ID" placeholder="Documento de Identificación">
+                                        <select  class="custom-select my-1 mr-sm-2" name="Documento_ID" required>
+
+                                            <option selected>Seleccionar </option>
+                                            <option value="C">C - Cédula</option>
+                                            <option value="P">P - Pasaporte</option>
+                                        </select>
+
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="NroCedula">Número de Cédulo/Pasaporte</label>
+                                        <input type="text" class="form-control" id="NroCedula" name="NroCedula" placeholder="Ej:1234567" disabled  >
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="CategoriaP_A">Categoría</label>
                                         <input type="text" class="form-control" name="CategoriaP_A" placeholder="Categoria">
-                                    </div>
-
-                                    <div class="form-group col-md-6">
-                                        <label for="NroCedula">Número de Cédulo/Pasaporte</label>
-                                        <input type="text" class="form-control" name="NroCedula" placeholder="Ejemplo: V-1234567">
                                     </div>
 
                                     <div class="form-group col-md-6">
@@ -202,14 +208,14 @@
                     
 
                     <td>
-                        <form action="{{route ('pa_pregrado.destroy', $P_Academico->id)}}" method="POST">
+                        <form class="eliminar_P_Academico_Pregrado" action="{{route ('pa_pregrado.destroy', $P_Academico->id)}}" method="POST">
                         <div class="form-button-action">    
                         
                          <a href="#" class="btn btn-link btn-primary" title="Editar" data-toggle="modal"  data-target="#editPersonalAcademico{{$P_Academico->id}}"><i class="fa fa-edit"></i></a>
                           
                             @csrf
                             @method('DELETE')
-                        <button class="btn btn-link btn-danger" title="Eliminar" type="submit" >
+                        <button class="btn btn-link btn-danger " title="Eliminar" type="submit" >
                             <i class="fa fa-times"></i>
                         </button>
                         
@@ -243,8 +249,6 @@
           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
       });
-    
-
 
     
      $('#InsertPersonalAcademico').on('submit', function(e) {
@@ -253,7 +257,7 @@
         let InputCod_Institucion = $('input[name=InputCod_Institucion]').val();
         let Fecha_Ingreso = $('input[name=Fecha_Ingreso]').val();        
         let CondicionLaboral = $('input[name=CondicionLaboral]').val();
-        let Documento_ID = $('input[name=Documento_ID]').val();
+        let Documento_ID = $('select[name=Documento_ID]').val();
         let CategoriaP_A = $('input[name=CategoriaP_A]').val();
         let NroCedula = $('input[name=NroCedula]').val();
         let Cat_Inicial = $('input[name=Cat_Inicial]').val();
@@ -298,16 +302,71 @@
     
                 success:function(response){
                     console.log(response)
-                    window.location.replace("/pa_pregrado");
+                    swal({
+                    title: "Excelente!",
+                    text: "La información se ha actualizado de forma correcta!",
+                    icon: "success",
+                    buttons: {
+                        confirm: {
+                            text: "Ok",
+                            value: true,
+                            visible: true,
+                            className: "btn btn-success",
+                            closeModal: true
+                           
+                        }
+                    }
+                }).then((redir)=>
+                {
+                        window.location.replace("/pa_pregrado"); 
+                });
+                    
                     
                 }, 
                     error:function(error){
                     console.log(error)
-                    alert('data no saved');
+                   // alert('data no saved');
                 }    
          });
     });
 
+
+    $('.eliminar_P_Academico_Pregrado').submit(function(e){
+        e.preventDefault();
+        swal({
+            title: '¿Está seguro que desea borrar este registro?',
+            text: "¡No pódras revertir esta acción!",
+            type: 'warning',
+            buttons:{
+                confirm: {
+                    text : 'Sí, Borrar',
+                    className : 'btn btn-info'
+                },
+                cancel: {
+                    visible: true,
+                    text : 'No, cancelar!',
+                    className: 'btn btn-danger'
+                }
+            }
+            
+        }).then((willDelete) => {
+            if (willDelete) {
+                swal("Registro borrado", {
+                    icon: "success",
+                    buttons : {
+                        confirm : {
+                            visible: false,
+                            className: 'btn btn-success'
+                        }
+                    }
+                });
+            this.submit();
+            } else {
+                //nothing happes
+            }
+        });
+
+    });
 
 
 </script>

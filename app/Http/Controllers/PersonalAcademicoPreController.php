@@ -115,6 +115,7 @@ class PersonalAcademicoPreController extends Controller
         $PersonalAcademico = PersonalAcademico::find($id);
         $PersonalAcademico->delete();
         return redirect('/pa_pregrado');
+        
     }
 
 
