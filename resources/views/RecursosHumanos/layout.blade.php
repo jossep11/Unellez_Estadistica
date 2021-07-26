@@ -187,7 +187,7 @@
                                 </li>
 
                                 <li>
-                                    <a href="/registropostgrado">
+                                    <a href="/registro_p_postgrado">
                                         <span class="sub-item">PostGrado</span>
                                     </a>
                                 </li>
@@ -277,6 +277,7 @@
     <script src="{{asset('js/IdentificadorIndex.js')}}"></script>    
     
     <script src="{{asset('js/validation.js')}}"></script>   
+    
     <script src="{{asset('js/Jp.js')}}"></script>   
 
 

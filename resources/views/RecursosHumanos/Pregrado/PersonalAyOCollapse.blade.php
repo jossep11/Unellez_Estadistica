@@ -10,14 +10,14 @@
         <div class="span-mode"></div>
     </div>
 
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+    <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
         <div class="card-body">
            
             <div class="Header_InsideCollapse">
                 <div class="barra">
                 <h1 id="TablePersonalAO" >Tabla de Datos del Personal Administrativo y Obrero</h1>    
                 <!-- Button trigger modal -->
-                <a href="#" class="btn_agregar_azul" data-toggle="modal" data-target="#AgregarAdmyObrero"> <i class="fas fa-plus"> Añadir nuevo</i></a>
+                <a href="#" class="btn_agregar_azul" data-toggle="modal" data-target="#AgregarAdmyObrero"> <i class="fas fa-plus"></i> <div> Añadir nuevo</div></a>
                 
                 </div>
             </div>
@@ -45,32 +45,27 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="InputCod_Institucion">Código de la institución</label>
-                                        <input type="text" class="form-control" name="InputCod_InstitucionA_O" placeholder="Código de la institución" required>
+                                        <input type="text" class="form-control" name="InputCod_InstitucionA_O" placeholder="Ej: 0000000284" required>
                                     </div>
                                
                                     <div class="form-group col-md-6">
+                                        <label for="FIngreso">Fecha de Ingreso</label>
+                                        <input type="date" class="form-control" name="FIngresoA_O" placeholder="Fecha de Ingreso" required>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
                                         <label for="Pais">País</label>
-                                        <input type="text" class="form-control" name="pais_p_academicoA_O" placeholder="País" required>
-                                    </div>
-
-                                    <div class="form-group col-md-6">
-                                        <label for="Documento_ID">Documento de Identificación</label>
-                                        <input type="text" class="form-control" name="Documento_IDA_O" placeholder="Documento de Identificación" required>
-                                    </div>
-
-                                    <div class="form-group col-md-6">
-                                        <label for="NroCedula">Número de Cédulo/Pasaporte</label>
-                                        <input type="text" class="form-control" name="NroCedulaA_O" placeholder="Ejemplo: V-1234567" required>
+                                        <input type="text" class="form-control" name="pais_p_academicoA_O" placeholder="Ej: 296" required>
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="Nombres">Nombres</label>
-                                        <input type="text" class="form-control" name="NombresA_O" placeholder="Ejem: Jossep Argenis" required>
+                                        <input type="text" class="form-control" name="NombresA_O" placeholder="Ej: Raúl José" required>
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="Apellidos">Apellidos</label>
-                                        <input type="text" class="form-control" name="ApellidosA_O" placeholder="Ejem:Paredes Valero" required>
+                                        <input type="text" class="form-control" name="ApellidosA_O" placeholder="Ej: Briceño Paredes" required>
                                     </div>
 
                                     <div class="form-group col-md-6">
@@ -78,10 +73,25 @@
                                         <select  class="custom-select my-1 mr-sm-2" name="Sexo_PersonalA_O" required>
 
                                             <option selected>Seleccionar </option>
-                                            <option value="0">Masculino</option>
-                                            <option value="1">Femenino</option>
+                                            <option value="0">0 - Masculino</option>
+                                            <option value="1">1 - Femenino</option>
                                         </select>
                                        
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="Documento_ID">Documento de Identificación</label>
+                                        <select  class="custom-select my-1 mr-sm-2" name="Documento_IDA_O" required>
+
+                                            <option selected>Seleccionar </option>
+                                            <option value="C">C - Cédula</option>
+                                            <option value="P">P - Pasaporte</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="NroCedula">Número de Cédulo/Pasaporte</label>
+                                        <input type="text" class="form-control" name="NroCedulaA_O" placeholder="Ej: 1234567" required>
                                     </div>
 
                                     <div class="form-group col-md-6">
@@ -89,44 +99,40 @@
                                         <input type="date" class="form-control" name="FNacimientoA_O" placeholder="Fecha de Nacimiento" required>
                                     </div>
 
-                                    <div class="form-group col-md-6">
-                                        <label for="FIngreso">Fecha de Ingreso</label>
-                                        <input type="date" class="form-control" name="FIngresoA_O" placeholder="Fecha de Ingreso" required>
-                                    </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="ConLaboral">Condición Laboral</label>
-                                        <input type="text" class="form-control" name="ConLaboralA_O" placeholder="Condición Laboral" required>
+                                        <input type="text" class="form-control" name="ConLaboralA_O" placeholder="Ej: 1" required>
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="DAministrativa">Nombre de la Dependencia Administrativa</label>
-                                        <input type="text" class="form-control" name="DAministrativaA_O" placeholder="Nombre de la Dependencia Administrativa" required>
+                                        <input type="text" class="form-control" name="DAministrativaA_O" placeholder="Ej: Presupuesto" required>
                                     </div>
                                     
                                     <div class="form-group col-md-6">
                                         <label for="TipoPersonal">Tipo de Personal</label>
-                                        <input type="text" class="form-control" name="TipoPersonalA_O" placeholder="Tipo de Personal" required>
+                                        <input type="text" class="form-control" name="TipoPersonalA_O" placeholder="Ej: 1" required>
                                     </div>
                                     
                                     <div class="form-group col-md-6">
                                         <label for="NivelIEducativa">Nivel de Instrucción Educativa</label>
-                                        <input type="text" class="form-control" name="NivelIEducativaA_O" placeholder="Nivel de Instrucción Educativa" required>
+                                        <input type="text" class="form-control" name="NivelIEducativaA_O" placeholder="Ej: 3" required>
                                     </div>
                                     
                                     <div class="form-group col-md-6">
                                         <label for="Profesion">Profesión</label>
-                                        <input type="text" class="form-control" name="ProfesionA_O" placeholder="Profesión">
+                                        <input type="text" class="form-control" name="ProfesionA_O" placeholder="Ej: 10">
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="Ocupacion">Ocupación</label>
-                                        <input type="text" class="form-control" name="OcupacionA_O" placeholder="Ejemp: Planificador" required>
+                                        <input type="text" class="form-control" name="OcupacionA_O" placeholder="Ej: Planificador" required>
                                     </div>
                                     
                                     <div class="form-group col-md-6">
                                         <label for="Capacitación">Capacitación</label>
-                                        <input type="text" class="form-control" name="CapacitacionA_O" placeholder="Ejemp: Cal Avanzado" required>
+                                        <input type="text" class="form-control" name="CapacitacionA_O" placeholder="Ej: Cal Avanzado" required>
                                     </div>
                                     
 
@@ -178,36 +184,36 @@
                 <tbody>         
                 {{-- Data extraction from database --}}
               
-                @foreach($PersonalAcademico as $P_Academico)
+                @foreach($PersonalAdm_Obrero as $P_Adm_Obrero)
                 <tr>
                    <td class="nro_item_center" id="tr_">
                       <div id="" class="nro_item1"> </div>
                     </td>
                        
-                        <td>{{$P_Academico->Institucion_code}}</td>
-                        <td>{{$P_Academico->Pais}}</td>
-                        <td>{{$P_Academico->Documento_De_Identificacion}}</td>
-                        <td>{{$P_Academico->CI}}</td>
-                        <td>{{$P_Academico->Apellidos}}</td>
-                        <td>{{$P_Academico->Nombres}}</td>
-                        <td>{{$P_Academico->Sexo}}</td>
-                        <td>{{$P_Academico->Fecha_Nacimiento}}</td>
-                        <td>{{$P_Academico->Fecha_Ingreso}}</td>
-                        <td>{{$P_Academico->Condicion_Laboral}}</td>
-                        <td>{{$P_Academico->Categoria}}</td>
-                        <td>{{$P_Academico->Categoria_Inicial}}</td>
-                        <td>{{$P_Academico->Tiempo_Dedicacion}}</td>
-                        <td>{{$P_Academico->TituloAcademico}}</td>
-                        <td>{{$P_Academico->Profesion}}</td>
-                        <td>{{$P_Academico->Adscripcion}}</td>
+                        <td>{{$P_Adm_Obrero->InputCod_InstitucionA_O}}</td>
+                        <td>{{$P_Adm_Obrero->pais_p_academicoA_O}}</td>
+                        <td>{{$P_Adm_Obrero->Documento_IDA_O}}</td>
+                        <td>{{$P_Adm_Obrero->NroCedulaA_O}}</td>
+                        <td>{{$P_Adm_Obrero->ApellidosA_O}}</td>
+                        <td>{{$P_Adm_Obrero->NombresA_O}}</td>
+                        <td>{{$P_Adm_Obrero->Sexo_PersonalA_O}}</td>
+                        <td>{{$P_Adm_Obrero->FNacimientoA_O}}</td>
+                        <td>{{$P_Adm_Obrero->FIngresoA_O}}</td>
+                        <td>{{$P_Adm_Obrero->ConLaboralA_O}}</td>
+                        <td>{{$P_Adm_Obrero->DAministrativaA_O}}</td>
+                        <td>{{$P_Adm_Obrero->TipoPersonalA_O}}</td>
+                        <td>{{$P_Adm_Obrero->NivelIEducativaA_O}}</td>
+                        <td>{{$P_Adm_Obrero->ProfesionA_O}}</td>
+                        <td>{{$P_Adm_Obrero->OcupacionA_O}}</td>
+                        <td>{{$P_Adm_Obrero->CapacitacionA_O}}</td>
 
                     
 
                     <td>
-                        <form action="{{route ('pa_pregrado.destroy', $P_Academico->id)}}" method="POST">
+                        <form class="eliminar_P_Adm_Obrero_Pregrado" action="{{route ('pao_pregrado.destroy', $P_Adm_Obrero->id)}}" method="POST">
                         <div class="form-button-action">    
                         
-                         <a href="#" class="btn btn-link btn-primary" title="Editar" data-toggle="modal"  data-target="#editPersonalAcademico{{$P_Academico->id}}"><i class="fa fa-edit"></i></a>
+                         <a href="#" class="btn btn-link btn-primary" title="Editar" data-toggle="modal"  data-target="#EditPersonalAdmyObrero{{$P_Adm_Obrero->id}}"><i class="fa fa-edit"></i></a>
                           
                             @csrf
                             @method('DELETE')
@@ -224,7 +230,136 @@
 
                 </tr>
 
-                
+            {{-- edit modal --}}
+            <div class="modal fade" id="EditPersonalAdmyObrero{{$P_Adm_Obrero->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Modificar Personal Administrativo y Obrero</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                       
+                        <div class="modal-body">
+                    
+                            <form id="PersonalAdmyObreroEdit{{$P_Adm_Obrero->id}}" action="{{route('pao_pregrado.update', $P_Adm_Obrero->id)}}"  method="POST"> > 
+                                {{ csrf_field() }}  {{   method_field('PUT')   }}
+
+            
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="InputCod_Institucion">Código de la institución</label>
+                                        <input type="text" class="form-control" name="UpdateInputCod_InstitucionA_O" placeholder="Ej: 0000000284" required value="{{$P_Adm_Obrero->InputCod_InstitucionA_O}}">
+                                    </div>
+                                                    
+                               
+                                    <div class="form-group col-md-6">
+                                        <label for="FIngreso">Fecha de Ingreso</label>
+                                        <input type="date" class="form-control" name="UpdateFIngresoA_O" placeholder="Fecha de Ingreso" required value="{{$P_Adm_Obrero->FIngresoA_O}}" >
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="Pais">País</label>
+                                        <input type="text" class="form-control" name="Updatepais_p_academicoA_O" placeholder="Ej: 296" required value="{{$P_Adm_Obrero->pais_p_academicoA_O}}">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="Nombres">Nombres</label>
+                                        <input type="text" class="form-control" name="UpdateNombresA_O" placeholder="Ej: Raúl José" required value="{{$P_Adm_Obrero->NombresA_O}}">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="Apellidos">Apellidos</label>
+                                        <input type="text" class="form-control" name="UpdateApellidosA_O" placeholder="Ej: Briceño Paredes" required value="{{$P_Adm_Obrero->ApellidosA_O}}">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="inputPassword4">Sexo</label>
+                                        <select  class="custom-select my-1 mr-sm-2" name="UpdateSexo_PersonalA_O" required>
+
+                                            <option value="{{$P_Adm_Obrero->Sexo_PersonalA_O}}" selected>{{$P_Adm_Obrero->Sexo_PersonalA_O}} </option>
+                                            <option value="0">0 - Masculino</option>
+                                            <option value="1">1 - Femenino</option>
+                                        </select>
+                                       
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="Documento_ID">Documento de Identificación</label>
+                                        <select  class="custom-select my-1 mr-sm-2" name="UpdateDocumento_IDA_O" required >
+
+                                            
+                                            <option value="{{$P_Adm_Obrero->Documento_IDA_O}}" selected>{{$P_Adm_Obrero->Documento_IDA_O}} </option>
+                                            <option value="C">C - Cédula</option>
+                                            <option value="P">P - Pasaporte</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="NroCedula">Número de Cédulo/Pasaporte</label>
+                                        <input type="text" class="form-control" name="UpdateNroCedulaA_O" placeholder="Ej: 1234567" required value="{{$P_Adm_Obrero->NroCedulaA_O}}">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="FNacimiento">Fecha de Nacimiento</label>
+                                        <input type="date" class="form-control" name="UpdateFNacimientoA_O" placeholder="Fecha de Nacimiento" required value="{{$P_Adm_Obrero->FNacimientoA_O}}">
+                                    </div>
+
+
+                                    <div class="form-group col-md-6">
+                                        <label for="ConLaboral">Condición Laboral</label>
+                                        <input type="text" class="form-control" name="UpdateConLaboralA_O" placeholder="Ej: 1" required value="{{$P_Adm_Obrero->ConLaboralA_O}}">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="DAministrativa">Nombre de la Dependencia Administrativa</label>
+                                        <input type="text" class="form-control" name="UpdateDAministrativaA_O" placeholder="Ej: Presupuesto" required value="{{$P_Adm_Obrero->DAministrativaA_O}}">
+                                    </div>
+                                    
+                                    <div class="form-group col-md-6">
+                                        <label for="TipoPersonal">Tipo de Personal</label>
+                                        <input type="text" class="form-control" name="UpdateTipoPersonalA_O" placeholder="Ej: 1" required value="{{$P_Adm_Obrero->TipoPersonalA_O}}">
+                                    </div>
+                                    
+                                    <div class="form-group col-md-6">
+                                        <label for="NivelIEducativa">Nivel de Instrucción Educativa</label>
+                                        <input type="text" class="form-control" name="UpdateNivelIEducativaA_O" placeholder="Ej: 3" required value="{{$P_Adm_Obrero->NivelIEducativaA_O}}">
+                                    </div>
+                                    
+                                    <div class="form-group col-md-6">
+                                        <label for="Profesion">Profesión</label>
+                                        <input type="text" class="form-control" name="UpdateProfesionA_O" placeholder="Ej: 10" value="{{$P_Adm_Obrero->ProfesionA_O}}">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="Ocupacion">Ocupación</label>
+                                        <input type="text" class="form-control" name="UpdateOcupacionA_O" placeholder="Ej: Planificador" required value="{{$P_Adm_Obrero->OcupacionA_O}}">
+                                    </div>
+                                    
+                                    <div class="form-group col-md-6">
+                                        <label for="Capacitación">Capacitación</label>
+                                        <input type="text" class="form-control" name="UpdateCapacitacionA_O" placeholder="Ej: Cal Avanzado" required value="{{$P_Adm_Obrero->CapacitacionA_O}}">
+                                    </div>
+                                
+                               
+                                </div>
+
+
+            
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-info" id="EditPersonalAdmyObrero" >Guardar cambios</button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                                </div>
+            
+                            </form>
+                        
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+
 
                 @endforeach
             
@@ -233,6 +368,7 @@
 
                 </tbody>
             </table>
+
         </div>
     </div>
 </div>
@@ -256,7 +392,7 @@
         
           let  InputCod_InstitucionA_O =$ ('input[name=InputCod_InstitucionA_O]').val();
           let  pais_p_academicoA_O =$ ('input[name=pais_p_academicoA_O]').val();
-          let  Documento_IDA_O =$ ('input[name=Documento_IDA_O]').val();
+          let  Documento_IDA_O =$ ('select[name=Documento_IDA_O]').val();
           let  NroCedulaA_O =$ ('input[name=NroCedulaA_O]').val();
           let  NombresA_O =$ ('input[name=NombresA_O]').val();
           let  ApellidosA_O =$ ('input[name=ApellidosA_O]').val();
@@ -302,7 +438,24 @@
     
                 success:function(response){
                     console.log(response)
-                    window.location.replace("/pa_pregrado");
+                    swal({
+                    title: "Excelente!",
+                    text: "La información se ha actualizado de forma correcta!",
+                    icon: "success",
+                    buttons: {
+                        confirm: {
+                            text: "Ok",
+                            value: true,
+                            visible: true,
+                            className: "btn btn-success",
+                            closeModal: true
+                           
+                        }
+                    }
+                }).then((redir)=>
+                {
+                        window.location.replace("/pa_pregrado"); 
+                });
                     
                 }, 
                     error:function(error){
@@ -311,6 +464,44 @@
                 }    
          });
     });
+
+    $('.eliminar_P_Adm_Obrero_Pregrado').submit(function(e){
+        e.preventDefault();
+        swal({
+            title: '¿Está seguro que desea borrar este registro?',
+            text: "¡No pódras revertir esta acción!",
+            type: 'warning',
+            buttons:{
+                confirm: {
+                    text : 'Sí, Borrar',
+                    className : 'btn btn-info'
+                },
+                cancel: {
+                    visible: true,
+                    text : 'No, cancelar!',
+                    className: 'btn btn-danger'
+                }
+            }
+            
+        }).then((willDelete) => {
+            if (willDelete) {
+                swal("Registro borrado", {
+                    icon: "success",
+                    buttons : {
+                        confirm : {
+                            visible: false,
+                            className: 'btn btn-success'
+                        }
+                    }
+                });
+            this.submit();
+            } else {
+                //nothing happes
+            }
+        });
+
+    });
+
 
 
 

@@ -18,7 +18,7 @@
                 <div class="barra">
                 <h1 id="tablax">Tabla de Datos del Personal Académico</h1>    
                 <!-- Button trigger modal -->
-                <a href="#" class="btn_agregar_azul" data-toggle="modal" data-target="#AgregarPersonalAcademico"> <i class="fas fa-plus"> Añadir nuevo</i></a>
+                <a href="#" class="btn_agregar_azul" data-toggle="modal" data-target="#AgregarPersonalAcademico"> <i class="fas fa-plus"></i> <div> Añadir nuevo</div></a>
                 
                 </div>
             </div>
@@ -46,21 +46,21 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="InputCod_Institucion">Código de la institución</label>
-                                        <input type="text" class="form-control" name="InputCod_Institucion" placeholder="Código de la institución">
+                                        <input type="text" class="form-control" name="InputCod_Institucion" placeholder="Ej:0000000284" required>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="Fecha">Fecha de ingreso</label>
-                                        <input type="date" class="form-control" name="Fecha_Ingreso" placeholder="Fecha de ingreso">
+                                        <input type="date" class="form-control" name="Fecha_Ingreso" placeholder="Fecha de ingreso" required>
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="Pais">País</label>
-                                        <input type="text" class="form-control" name="pais_p_academico" placeholder="País">
+                                        <input type="text" class="form-control" name="pais_p_academico" placeholder="Ej:296" required>
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="CondicionLaboral">Condición Laboral</label>
-                                        <input type="text" class="form-control" name="CondicionLaboral" placeholder="Condición Laboral">
+                                        <input type="text" class="form-control" name="CondicionLaboral" placeholder="1" required>
                                     </div>
 
                                     <div class="form-group col-md-6">
@@ -76,37 +76,37 @@
 
                                     <div class="form-group col-md-6">
                                         <label for="NroCedula">Número de Cédulo/Pasaporte</label>
-                                        <input type="text" class="form-control" id="NroCedula" name="NroCedula" placeholder="Ej:1234567" disabled  >
+                                        <input type="text" class="form-control" id="NroCedula" name="NroCedula" placeholder="Ej:12345678" disabled  >
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="CategoriaP_A">Categoría</label>
-                                        <input type="text" class="form-control" name="CategoriaP_A" placeholder="Categoria">
+                                        <input type="text" class="form-control" name="CategoriaP_A" placeholder="2" required>
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="Cat_Inicial">Categória Inicial</label>
-                                        <input type="text" class="form-control" name="Cat_Inicial" placeholder="Categória Inicial">
+                                        <input type="text" class="form-control" name="Cat_Inicial" placeholder="1" required>
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="Nombres">Nombres</label>
-                                        <input type="text" class="form-control" name="Nombres_P_Academico" placeholder="Ejem: Jossep Argenis">
+                                        <input type="text" class="form-control" name="Nombres_P_Academico" placeholder="Ej: Raúl José" required>
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="Apellidos">Apellidos</label>
-                                        <input type="text" class="form-control" name="Apellidos" placeholder="Ejem:Paredes Valero">
+                                        <input type="text" class="form-control" name="Apellidos" placeholder="Ej:Briceño Roa" required>
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="TiempodeDedicacion">Tiempo de Dedicación</label>
-                                        <input type="text" class="form-control" name="TiempoDedicacion" placeholder="Tiempo de Dedicación">
+                                        <input type="text" class="form-control" name="TiempoDedicacion" placeholder="1">
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="TiempoAcademico">Título Académico</label>
-                                        <input type="text" class="form-control" name="TituloAcademico" placeholder="Título Académico">
+                                        <input type="text" class="form-control" name="TituloAcademico" placeholder="2">
                                     </div>
 
                                     <div class="form-group col-md-6">
@@ -114,25 +114,25 @@
                                         <select  class="custom-select my-1 mr-sm-2" name="Sexo_PersonalAcademico" required>
 
                                             <option selected>Seleccionar </option>
-                                            <option value="0">Masculino</option>
-                                            <option value="1">Femenino</option>
+                                            <option value="0">0 - Masculino</option>
+                                            <option value="1">1 - Femenino</option>
                                         </select>
                                        
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="Profesion">Profesión</label>
-                                        <input type="text" class="form-control" name="Profesion" placeholder="Profesión">
+                                        <input type="text" class="form-control" name="Profesion" placeholder="123" required>
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="FNacimiento">Fecha de Nacimiento</label>
-                                        <input type="date" class="form-control" name="FNacimiento" placeholder="Password">
+                                        <input type="date" class="form-control" name="FNacimiento" required>
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="Adscripción">Adscripción</label>
-                                        <input type="Adscripción" class="form-control" name="Adscripción" placeholder="Adscripción">
+                                        <input type="Adscripción" class="form-control" name="Adscripción" placeholder="Salud Pública" required>
                                     </div>
 
                                 </div>

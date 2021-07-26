@@ -11,10 +11,8 @@
         <div class="card-header">
             <div class="barra">
             <h1 id="" class="IdentificadorIndex">Recusos humanos-Pregrado</h1>  
-            <a href="#"><i class="fas fa-file-excel"> Generar XLS</i></a>  
-            <!-- Button trigger modal -->
-        
-            
+            <a href="#" class="barra generalxls"><i class="fas fa-file-excel"></i> <div>Generar XLS</div></a>  
+            <!-- Button trigger modal -->            
             </div>
         </div>
       

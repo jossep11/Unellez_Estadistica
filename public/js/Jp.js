@@ -10,6 +10,7 @@ let tablax = document.querySelector("#tablax");
 let checkseleccionado = document.querySelectorAll('.checkseleccionado');
 
 
+
 let RutaName=GetRutaName();
 
 
@@ -204,3 +205,17 @@ function IndexMatrizDAFO() {
 
 }
 IndexMatrizDAFO();
+
+
+
+CollapseTwo = document.querySelector('#collapseTwo');
+
+
+document.addEventListener("DOMContentLoaded", function(){
+    
+    setTimeout(
+        function() {
+            CollapseTwo.classList.remove("show")   
+        }, 
+        100);
+    });

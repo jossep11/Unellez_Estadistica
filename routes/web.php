@@ -6,7 +6,8 @@ use App\Http\Controllers\PersonalAdministratObreroPreController;
 use Illuminate\Support\Facades\Route;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\ProductsExport;
-use App\Models\PersonalAdm_Obrero;
+use App\Http\Controllers\PersonalAcademicoPostGController;
+use App\Http\Controllers\PersonalAdmObreroPostGController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,8 @@ use App\Models\PersonalAdm_Obrero;
 
 Route::resource('pa_pregrado', PersonalAcademicoPreController::class);
 Route::resource('pao_pregrado', PersonalAdministratObreroPreController::class);
+Route::resource('registro_p_postgrado', PersonalAcademicoPostGController::class);
+Route::resource('registro_paobrero_postgrado', PersonalAdmObreroPostGController::class);
 
 Route::post('/addingpersonalacademico', [PersonalAcademicoPreController::class, 'store'])->name('add.PersonalAcademicoPregrado');
 Route::post('/addingpao_pregrado', [PersonalAdministratObreroPreController::class, 'store'])->name('add.PaoPregrado');
