@@ -47,21 +47,21 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="InputCod_Institucion">Código de la institución</label>
-                                        <input type="text" class="form-control" name="InputCod_Institucion" placeholder="Ej:0000000284" required>
+                                        <input type="text" class="form-control" name="InputCod_Institucion" placeholder="Ej:0000000284" required  pattern="\d*" title="Campo Numerico">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="Fecha">Fecha de ingreso</label>
-                                        <input type="date" class="form-control" name="Fecha_Ingreso" placeholder="Fecha de ingreso" required>
+                                        <input type="date" class="form-control" name="Fecha_Ingreso" placeholder="Fecha de ingreso" required >
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="Pais">País</label>
-                                        <input type="text" class="form-control" name="pais_p_academico" placeholder="Ej:296" required>
+                                        <input type="text" class="form-control" name="pais_p_academico" placeholder="Ej:296" required pattern="\d*" title="Campo Numerico">
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="CondicionLaboral">Condición Laboral</label>
-                                        <input type="text" class="form-control" name="CondicionLaboral" placeholder="1" required>
+                                        <input type="text" class="form-control" name="CondicionLaboral" placeholder="1" required pattern="\d*" title="Campo Numerico">
                                     </div>
 
                                     <div class="form-group col-md-6">
@@ -82,32 +82,32 @@
 
                                     <div class="form-group col-md-6">
                                         <label for="CategoriaP_A">Categoría</label>
-                                        <input type="text" class="form-control" name="CategoriaP_A" placeholder="2" required>
+                                        <input type="text" class="form-control" name="CategoriaP_A" placeholder="2" required pattern="\d*" title="Campo Numerico">
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="Cat_Inicial">Categória Inicial</label>
-                                        <input type="text" class="form-control" name="Cat_Inicial" placeholder="1" required>
+                                        <input type="text" class="form-control" name="Cat_Inicial" placeholder="1" required pattern="\d*" title="Campo Numerico">
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="Nombres">Nombres</label>
-                                        <input type="text" class="form-control" name="Nombres_P_Academico" placeholder="Ej: Raúl José" required>
+                                        <input type="text" class="form-control" name="Nombres_P_Academico" placeholder="Ej: Raúl José" required title="Campo Textual" pattern="[A-Za-z\s]*">
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="Apellidos">Apellidos</label>
-                                        <input type="text" class="form-control" name="Apellidos" placeholder="Ej:Briceño Roa" required>
+                                        <input type="text" class="form-control" name="Apellidos" placeholder="Ej:Briceño Roa" required title="Campo Textual" pattern="[A-Za-z\s]*">
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="TiempodeDedicacion">Tiempo de Dedicación</label>
-                                        <input type="text" class="form-control" name="TiempoDedicacion" placeholder="1">
+                                        <input type="text" class="form-control" name="TiempoDedicacion" placeholder="1" pattern="\d*" title="Campo Numerico">
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="TiempoAcademico">Título Académico</label>
-                                        <input type="text" class="form-control" name="TituloAcademico" placeholder="2">
+                                        <input type="text" class="form-control" name="TituloAcademico" placeholder="2" pattern="\d*" title="Campo Numerico">
                                     </div>
 
                                     <div class="form-group col-md-6">
@@ -123,7 +123,7 @@
 
                                     <div class="form-group col-md-6">
                                         <label for="Profesion">Profesión</label>
-                                        <input type="text" class="form-control" name="Profesion" placeholder="123" required>
+                                        <input type="text" class="form-control" name="Profesion" placeholder="123" required pattern="\d*" title="Campo Numerico">
                                     </div>
 
                                     <div class="form-group col-md-6">
@@ -239,29 +239,29 @@
                            
                             <div class="modal-body">
                         
-                                <form id="PersonalAdmyObreroEdit_" action="{{route('pa_pregrado.update', $P_Academico->id)}}"  method="POST"> 
+                                <form class="PersonalAdmyObreroE" action="{{route('pa_pregrado.update', $P_Academico->id)}}"  method="POST"> 
                                     {{ csrf_field() }}  {{   method_field('PUT')   }}
     
                 
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label for="InputCod_Institucion">Código de la institución</label>
-                                            <input type="text" class="form-control" name="UpdateInputCod_Institucion" placeholder="Ej: 0000000284"   value="{{$P_Academico->Institucion_code}}" >
+                                            <input type="text" class="form-control" name="UpdateInputCod_Institucion" placeholder="Ej: 0000000284"   value="{{$P_Academico->Institucion_code}}" pattern="\d*" title="Campo Numerico">
                                         </div>
 
                                         <div class="form-group col-md-6">
                                             <label for="Fecha">Fecha de ingreso</label>
-                                            <input type="date" class="form-control" name="editFecha_Ingreso" placeholder="Fecha de ingreso" required  value="{{$P_Academico->Fecha_Ingreso}}">
+                                            <input type="date" class="form-control" name="editFecha_Ingreso" placeholder="Fecha de ingreso" required  value="{{$P_Academico->Fecha_Ingreso}}" >
                                         </div>
     
                                         <div class="form-group col-md-6">
                                             <label for="Pais">País</label>
-                                            <input type="text" class="form-control" name="editpais_p_academico" placeholder="Ej:296" required  value="{{$P_Academico->Pais}}">
+                                            <input type="text" class="form-control" name="editpais_p_academico" placeholder="Ej:296" required  value="{{$P_Academico->Pais}}" pattern="\d*" title="Campo Numerico">
                                         </div>
     
                                         <div class="form-group col-md-6">
                                             <label for="CondicionLaboral">Condición Laboral</label>
-                                            <input type="text" class="form-control" name="editCondicionLaboral" placeholder="1" required  value="{{$P_Academico->Condicion_Laboral}}">
+                                            <input type="text" class="form-control" name="editCondicionLaboral" placeholder="1" required  value="{{$P_Academico->Condicion_Laboral}}"    pattern="\d*" title="Campo Numerico">
                                         </div>
     
                                         <div class="form-group col-md-6">
@@ -277,37 +277,37 @@
     
                                         <div class="form-group col-md-6">
                                             <label for="NroCedula">Número de Cédulo/Pasaporte</label>
-                                            <input type="text" class="form-control" id="NroCedula" name="editNroCedula" placeholder="Ej:12345678"    value="{{$P_Academico->CI}}">
+                                            <input type="text" class="form-control" id="NroCedula" name="editNroCedula" placeholder="Ej:12345678"    value="{{$P_Academico->CI}}"   pattern="\d*" title="Campo Numerico">
                                         </div>
     
                                         <div class="form-group col-md-6">
                                             <label for="CategoriaP_A">Categoría</label>
-                                            <input type="text" class="form-control" name="editCategoriaP_A" placeholder="2" required  value="{{$P_Academico->Categoria}}">
+                                            <input type="text" class="form-control" name="editCategoriaP_A" placeholder="2" required  value="{{$P_Academico->Categoria}}"  pattern="\d*" title="Campo Numerico">
                                         </div>
     
                                         <div class="form-group col-md-6">
                                             <label for="Cat_Inicial">Categória Inicial</label>
-                                            <input type="text" class="form-control" name="editCat_Inicial" placeholder="1" required  value="{{$P_Academico->Categoria_Inicial}}">
+                                            <input type="text" class="form-control" name="editCat_Inicial" placeholder="1" required  value="{{$P_Academico->Categoria_Inicial}}" pattern="\d*" title="Campo Numerico">
                                         </div>
     
                                         <div class="form-group col-md-6">
                                             <label for="Nombres">Nombres</label>
-                                            <input type="text" class="form-control" name="editNombres_P_Academico" placeholder="Ej: Raúl José" required  value="{{$P_Academico->Nombres}}">
+                                            <input type="text" class="form-control" name="editNombres_P_Academico" placeholder="Ej: Raúl José" required  value="{{$P_Academico->Nombres}}"   title="Campo Textual" pattern="[A-Za-z\s]*">
                                         </div>
     
                                         <div class="form-group col-md-6">
                                             <label for="Apellidos">Apellidos</label>
-                                            <input type="text" class="form-control" name="editApellidos" placeholder="Ej:Briceño Roa" required  value="{{$P_Academico->Apellidos}}">
+                                            <input type="text" class="form-control" name="editApellidos" placeholder="Ej:Briceño Roa" required  value="{{$P_Academico->Apellidos}}"  title="Campo Textual" pattern="[A-Za-z\s]*">
                                         </div>
     
                                         <div class="form-group col-md-6">
                                             <label for="TiempodeDedicacion">Tiempo de Dedicación</label>
-                                            <input type="text" class="form-control" name="editTiempoDedicacion" placeholder="1" value="{{$P_Academico->Tiempo_Dedicacion}}">
+                                            <input type="text" class="form-control" name="editTiempoDedicacion" placeholder="1" value="{{$P_Academico->Tiempo_Dedicacion}}" pattern="\d*" title="Campo Numerico">
                                         </div>
     
                                         <div class="form-group col-md-6">
                                             <label for="TiempoAcademico">Título Académico</label>
-                                            <input type="text" class="form-control" name="editTituloAcademico" placeholder="2" value="{{$P_Academico->TituloAcademico}}">
+                                            <input type="text" class="form-control" name="editTituloAcademico" placeholder="2" value="{{$P_Academico->TituloAcademico}}" pattern="\d*" title="Campo Numerico">
                                         </div>
     
                                         <div class="form-group col-md-6">
@@ -323,7 +323,7 @@
     
                                         <div class="form-group col-md-6">
                                             <label for="Profesion">Profesión</label>
-                                            <input type="text" class="form-control" name="editProfesion" placeholder="123" required  value="{{$P_Academico->Profesion}}">
+                                            <input type="text" class="form-control" name="editProfesion" placeholder="123" required  value="{{$P_Academico->Profesion}}" pattern="\d*" title="Campo Numerico">
                                         </div>
     
                                         <div class="form-group col-md-6">
@@ -333,7 +333,7 @@
     
                                         <div class="form-group col-md-6">
                                             <label for="Adscripción">Adscripción</label>
-                                            <input type="Adscripción" class="form-control" name="editAdscripción" placeholder="Salud Pública" required  value="{{$P_Academico->Adscripcion}}">
+                                            <input type="Adscripción" class="form-control" name="editAdscripción" placeholder="Salud Pública" required  value="{{$P_Academico->Adscripcion}}" title="Campo Textual" pattern="[A-Za-z\s]*">
                                         </div>
                                                     
                                    
@@ -455,7 +455,7 @@
          });
     });
 
-    $('#PersonalAdmyObreroEdit_').submit(function(e){
+    $('.PersonalAdmyObreroE').submit(function(e){
         e.preventDefault();
         swal({
                     title: "Excelente!",

@@ -47,12 +47,12 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="InputCod_Institucion">Código de la institución</label>
-                                        <input type="text" class="form-control" name="InputCod_InstitucionAcademicoPost" placeholder="Ej:0000000284" required>
+                                        <input type="text" class="form-control" name="InputCod_InstitucionAcademicoPost" placeholder="Ej:0000000284" required pattern="\d*" title="Campo Numerico">
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="Pais">País</label>
-                                        <input type="text" class="form-control" name="pais_p_academicoAcademicoPost" placeholder="Ej:296" required>
+                                        <input type="text" class="form-control" name="pais_p_academicoAcademicoPost" placeholder="Ej:296" required pattern="\d*" title="Campo Numerico">
                                     </div>
 
                                     <div class="form-group col-md-6">
@@ -67,17 +67,17 @@
 
                                     <div class="form-group col-md-6">
                                         <label for="NroCedula">Número de Cédulo/Pasaporte</label>
-                                        <input type="text" class="form-control" id="NroCedula" name="NroCedulaA_OPost" placeholder="Ej:12345678"   >
+                                        <input type="text" class="form-control" id="NroCedula" name="NroCedulaA_OPost" placeholder="Ej:12345678"   pattern="\d*" title="Campo Numerico" >
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="Nombres">Nombres</label>
-                                        <input type="text" class="form-control" name="NombresAcademicoPost" placeholder="Ej: Raúl José" required>
+                                        <input type="text" class="form-control" name="NombresAcademicoPost" placeholder="Ej: Raúl José" required title="Campo Textual" pattern="[A-Za-z\s]*">
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="Apellidos">Apellidos</label>
-                                        <input type="text" class="form-control" name="ApellidosA_OPost" placeholder="Ej:Briceño Roa" required>
+                                        <input type="text" class="form-control" name="ApellidosA_OPost" placeholder="Ej:Briceño Roa" required title="Campo Textual" pattern="[A-Za-z\s]*">
                                     </div>
 
                                     <div class="form-group col-md-6">
@@ -103,34 +103,34 @@
 
                                     <div class="form-group col-md-6">
                                         <label for="Cat_Inicial">Condicion Laboral</label>
-                                        <input type="text" class="form-control" name="CondicionLaboralAcademicoPost" placeholder="1" required>
+                                        <input type="text" class="form-control" name="CondicionLaboralAcademicoPost" placeholder="1" required pattern="\d*" title="Campo Numerico">
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="Dependencia">Nombre de la Dependencia Administrativa</label>
-                                        <input type="text" class="form-control" name="DependenciaAdministrativaA_OPost" placeholder="RRHH">
+                                        <input type="text" class="form-control" name="DependenciaAdministrativaA_OPost" placeholder="RRHH" title="Campo Textual" pattern="[A-Za-z\s]*">
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="TipoPersonal">Tipo de Personal</label>
-                                        <input type="text" class="form-control" name="TipoPersonalA_OPost" placeholder="1">
+                                        <input type="text" class="form-control" name="TipoPersonalA_OPost" placeholder="1" required pattern="\d*" title="Campo Numerico">
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="TiempodeDedicacion">Nivel de Instrucción Educativa</label>
-                                        <input type="text" class="form-control" name="NivelInstruccionEducA_OPost" placeholder="1">
+                                        <input type="text" class="form-control" name="NivelInstruccionEducA_OPost" placeholder="1" required pattern="\d*" title="Campo Numerico">
                                     </div>
 
                          
                                     
                                     <div class="form-group col-md-6">
                                         <label for="Adscripción">Capacitación</label>
-                                        <input type="Adscripción" class="form-control" name="CapacitacionA_OPost" placeholder="Salud Pública" required>
+                                        <input type="Adscripción" class="form-control" name="CapacitacionA_OPost" placeholder="Salud Pública" required title="Campo Textual" pattern="[A-Za-z\s]*">
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="Comentarios">Comentarios</label>
-                                        <input type="text" class="form-control" name="ComentariosPost" placeholder="" required>
+                                        <input type="text" class="form-control" name="ComentariosPost" placeholder="" required title="Campo Textual" pattern="[A-Za-z\s]*">
                                     </div>
 
                                 </div>

@@ -24,7 +24,7 @@ use App\Http\Controllers\PersonalAdmObreroPostGController;
 Route::post('estadisticalogout', 'App\Http\Controllers\Login_Estadistica@prueba')->name('logout');
 Route::resource('estadistica', Login_Estadistica::class)->middleware('guest');
 
-Route::resource('pa_pregrado', PersonalAcademicoPreController::class);
+Route::resource('pa_pregrado', PersonalAcademicoPreController::class)->middleware('auth');;
 Route::resource('pao_pregrado', PersonalAdministratObreroPreController::class);
 
 //pregrado ajax
@@ -44,7 +44,7 @@ Route::post('/addingpersonalacademicopostg', [PersonalAcademicoPostGController::
 // this crud is done
 // this crud is done
 //POSTGRADO
-Route::resource('registro_p_postgrado', PersonalAcademicoPostGController::class);
+Route::resource('registro_p_postgrado', PersonalAcademicoPostGController::class)->middleware('auth');
 //done
 
 
@@ -56,12 +56,6 @@ Route::resource('registro_p_postgrado', PersonalAcademicoPostGController::class)
 Route::resource('registro_paobrero_postgrado', PersonalAdmObreroPostGController::class);
 //ajax
 Route::post('/addinadmpost', [PersonalAdmObreroPostGController::class, 'store'])->name('add.admpost');
-
-
-
-
-
-
 
 
 
