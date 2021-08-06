@@ -40,64 +40,44 @@
                            
                             <div class="modal-body">
                         
-                                <form id="InsertPersonalAcademico" > 
+                                <form id="InsertPersonalAcademicoPostGrado" > 
                                     {{ csrf_field() }}
 
    
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="InputCod_Institucion">Código de la institución</label>
-                                        <input type="text" class="form-control" name="InputCod_Institucion" placeholder="Ej:0000000284" required>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="Fecha">Fecha de ingreso</label>
-                                        <input type="date" class="form-control" name="Fecha_Ingreso" placeholder="Fecha de ingreso" required>
+                                        <input type="text" class="form-control" name="InputCod_InstitucionAcademico" placeholder="Ej:0000000284" required>
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="Pais">País</label>
-                                        <input type="text" class="form-control" name="pais_p_academico" placeholder="Ej:296" required>
+                                        <input type="text" class="form-control" name="pais_p_academicoAcademico" placeholder="Ej:296" required>
                                     </div>
 
                                     <div class="form-group col-md-6">
-                                        <label for="CondicionLaboral">Condición Laboral</label>
-                                        <input type="text" class="form-control" name="CondicionLaboral" placeholder="1" required>
+                                        <label for="Fecha">Fecha de ingreso</label>
+                                        <input type="date" class="form-control" name="Fecha_de_Ingreso" placeholder="Fecha de ingreso" required>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="CategoriaP_A">Categoría</label>
+                                        <input type="text" class="form-control" name="Categoria" placeholder="2" required>
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="Documento_ID">Documento de Identificación</label>
-                                        <select  class="custom-select my-1 mr-sm-2" name="Documento_ID" required>
+                                        <select  class="custom-select my-1 mr-sm-2" name="Documento_IDAcademico" required>
 
                                             <option selected>Seleccionar </option>
                                             <option value="C">C - Cédula</option>
                                             <option value="P">P - Pasaporte</option>
                                         </select>
-
                                     </div>
 
                                     <div class="form-group col-md-6">
                                         <label for="NroCedula">Número de Cédulo/Pasaporte</label>
-                                        <input type="text" class="form-control" id="NroCedula" name="NroCedula" placeholder="Ej:12345678" disabled  >
-                                    </div>
-
-                                    <div class="form-group col-md-6">
-                                        <label for="CategoriaP_A">Categoría</label>
-                                        <input type="text" class="form-control" name="CategoriaP_A" placeholder="2" required>
-                                    </div>
-
-                                    <div class="form-group col-md-6">
-                                        <label for="Cat_Inicial">Categória Inicial</label>
-                                        <input type="text" class="form-control" name="Cat_Inicial" placeholder="1" required>
-                                    </div>
-
-                                    <div class="form-group col-md-6">
-                                        <label for="Nombres">Nombres</label>
-                                        <input type="text" class="form-control" name="Nombres_P_Academico" placeholder="Ej: Raúl José" required>
-                                    </div>
-
-                                    <div class="form-group col-md-6">
-                                        <label for="Apellidos">Apellidos</label>
-                                        <input type="text" class="form-control" name="Apellidos" placeholder="Ej:Briceño Roa" required>
+                                        <input type="text" class="form-control" id="NroCedula" name="NroCedulaA_O" placeholder="Ej:12345678"   >
                                     </div>
 
                                     <div class="form-group col-md-6">
@@ -111,6 +91,26 @@
                                     </div>
 
                                     <div class="form-group col-md-6">
+                                        <label for="Profesion">Profesión</label>
+                                        <input type="text" class="form-control" name="ProfesionAcademico" placeholder="123" required>
+                                    </div>
+                                    
+                                    <div class="form-group col-md-6">
+                                        <label for="Adscripción">Adscripción</label>
+                                        <input type="Adscripción" class="form-control" name="Adscripcion" placeholder="Salud Pública" required>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="Nombres">Nombres</label>
+                                        <input type="text" class="form-control" name="NombresAcademico" placeholder="Ej: Raúl José" required>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="Apellidos">Apellidos</label>
+                                        <input type="text" class="form-control" name="ApellidosA_O" placeholder="Ej:Briceño Roa" required>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
                                         <label for="inputPassword4">Sexo</label>
                                         <select  class="custom-select my-1 mr-sm-2" name="Sexo_PersonalAcademico" required>
 
@@ -121,26 +121,28 @@
                                        
                                     </div>
 
-                                    <div class="form-group col-md-6">
-                                        <label for="Profesion">Profesión</label>
-                                        <input type="text" class="form-control" name="Profesion" placeholder="123" required>
-                                    </div>
-
+                                    
                                     <div class="form-group col-md-6">
                                         <label for="FNacimiento">Fecha de Nacimiento</label>
-                                        <input type="date" class="form-control" name="FNacimiento" required>
+                                        <input type="date" class="form-control" name="FNacimientoAcademico" required>
+                                    </div>
+
+
+                                    <div class="form-group col-md-6">
+                                        <label for="CondicionLaboral">Comentarios</label>
+                                        <input type="text" class="form-control" name="Comentarios" placeholder="" required>
                                     </div>
 
                                     <div class="form-group col-md-6">
-                                        <label for="Adscripción">Adscripción</label>
-                                        <input type="Adscripción" class="form-control" name="Adscripción" placeholder="Salud Pública" required>
+                                        <label for="Cat_Inicial">Condicion Laboral</label>
+                                        <input type="text" class="form-control" name="CondicionLaboralAcademico" placeholder="1" required>
                                     </div>
 
                                 </div>
 
 
                                     <div class="modal-footer">
-                                        <button type="submit" class="btn btn-primary" id="butsave" >Añadir</button>
+                                        <button type="submit" class="btn btn-primary" id="butsavePost" >Añadir</button>
                                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                                        
                                     </div>
@@ -164,17 +166,17 @@
                         <th>País</th>
                         <th>Documento de Identificación</th>
                         <th>Número de Cédula/Pasaporte</th>
-                        <th>Nombres</th>
                         <th>Apellidos</th>
+                        <th>Nombres</th>
                         <th>Sexo</th>
                         <th>Fecha de Nacimiento</th>
                         <th>Fecha de Ingreso</th>
                         <th>Condición Laboral</th>
                         <th>Categoría</th>
-                        <th>Categoría Inicial</th>
                         <th>Tiempo de Dedicación</th>
-                        <th>Título Académico</th>
-                        <th>Profesión</th>
+                        <th>Nivel de Instrucción Educativa</th>
+                        <th>Capacitación</th>
+                        <th>Comentarios</th>
                         <th>Adscripción</th>
                         <th>Acciones</th>
                     </tr>
@@ -183,35 +185,37 @@
                 <tbody>         
                 {{-- Data extraction from database --}}
               
-                @foreach($PersonalAcademico as $P_Academico)
+                @foreach($PersonalAcademicoPostGrado as $P_Academico)
                 <tr>
                    <td class="nro_item_center" id="tr_">
                       <div id="" class="nro_item"> </div>
                     </td>
                        
-                        <td>{{$P_Academico->Institucion_code}}</td>
-                        <td>{{$P_Academico->Pais}}</td>
-                        <td>{{$P_Academico->Documento_De_Identificacion}}</td>
-                        <td>{{$P_Academico->CI}}</td>
-                        <td>{{$P_Academico->Nombres}}</td>
-                        <td>{{$P_Academico->Apellidos}}</td>
-                        <td>{{$P_Academico->Sexo}}</td>
-                        <td>{{$P_Academico->Fecha_Nacimiento}}</td>
-                        <td>{{$P_Academico->Fecha_Ingreso}}</td>
-                        <td>{{$P_Academico->Condicion_Laboral}}</td>
+                        <td>{{$P_Academico->InputCod_InstitucionAcademico}}</td>
+                        <td>{{$P_Academico->pais_p_academicoAcademico}}</td>
+                        <td>{{$P_Academico->Documento_IDAcademico}}</td>
+                        <td>{{$P_Academico->NroCedulaA_O}}</td>
+                        <td>{{$P_Academico->ApellidosA_O}}</td>
+                        <td>{{$P_Academico->NombresAcademico}}</td>
+                        <td>{{$P_Academico->Sexo_PersonalAcademico}}</td>
+                        <td>{{$P_Academico->FNacimientoAcademico}}</td>
+                        <td>{{$P_Academico->Fecha_de_Ingreso}}</td>
+                        <td>{{$P_Academico->CondicionLaboralAcademico}}</td>
                         <td>{{$P_Academico->Categoria}}</td>
-                        <td>{{$P_Academico->Categoria_Inicial}}</td>
-                        <td>{{$P_Academico->Tiempo_Dedicacion}}</td>
+                        <td>{{$P_Academico->TiempoDedicacion}}</td>
                         <td>{{$P_Academico->TituloAcademico}}</td>
-                        <td>{{$P_Academico->Profesion}}</td>
-                        <td>{{$P_Academico->Adscripcion}}</td>                   
+                        <td>{{$P_Academico->ProfesionAcademico}}</td>
+                        <td>{{$P_Academico->Adscripcion}}</td>
+                        <td>{{$P_Academico->Comentarios}}</td>
+                       
+
+                    
 
                     <td>
-                        <form class="eliminar_P_Academico_Pregrado" action="{{route ('pa_pregrado.destroy', $P_Academico->id)}}" method="POST">
+                        <form class="eliminar_P_Academico_Pregrado" action="{{route ('registro_p_postgrado.destroy', $P_Academico->id)}}" method="POST">
                         <div class="form-button-action">    
                         
-                         <a href="#" class="btn btn-link btn-primary" title="Editar" data-toggle="modal"  data-target="#editPersonalAcademicoPre{{$P_Academico->id}}"><i class="fa fa-edit"></i></a>
-                          
+                         <a href="#" class="btn btn-link btn-primary" title="Editar" data-toggle="modal"  data-target="#editPersonalAcademicoPostgrado{{$P_Academico->id}}"><i class="fa fa-edit"></i></a>
                             @csrf
                             @method('DELETE')
                         <button class="btn btn-link btn-danger " title="Eliminar" type="submit" >
@@ -227,7 +231,7 @@
 
                 </tr>
 
-                <div class="modal fade" id="editPersonalAcademicoPre{{$P_Academico->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal fade" id="editPersonalAcademicoPostgrado{{$P_Academico->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -239,106 +243,105 @@
                            
                             <div class="modal-body">
                         
-                                <form id="PersonalAdmyObreroEdit_" action="{{route('pa_pregrado.update', $P_Academico->id)}}"  method="POST"> 
+                                <form class="PersonAdPostG" action="{{route('registro_p_postgrado.update', $P_Academico->id)}}"  method="POST"> 
                                     {{ csrf_field() }}  {{   method_field('PUT')   }}
     
                 
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label for="InputCod_Institucion">Código de la institución</label>
-                                            <input type="text" class="form-control" name="UpdateInputCod_Institucion" placeholder="Ej: 0000000284"   value="{{$P_Academico->Institucion_code}}" >
-                                        </div>
-
-                                        <div class="form-group col-md-6">
-                                            <label for="Fecha">Fecha de ingreso</label>
-                                            <input type="date" class="form-control" name="editFecha_Ingreso" placeholder="Fecha de ingreso" required  value="{{$P_Academico->Fecha_Ingreso}}">
+                                            <input type="text" class="form-control" name="EditInputCod_InstitucionAcademico" placeholder="Ej:0000000284" required value="{{$P_Academico->InputCod_InstitucionAcademico}}">
                                         </div>
     
                                         <div class="form-group col-md-6">
                                             <label for="Pais">País</label>
-                                            <input type="text" class="form-control" name="editpais_p_academico" placeholder="Ej:296" required  value="{{$P_Academico->Pais}}">
+                                            <input type="text" class="form-control" name="Editpais_p_academicoAcademico" placeholder="Ej:296" required value="{{$P_Academico->pais_p_academicoAcademico}}">
                                         </div>
     
                                         <div class="form-group col-md-6">
-                                            <label for="CondicionLaboral">Condición Laboral</label>
-                                            <input type="text" class="form-control" name="editCondicionLaboral" placeholder="1" required  value="{{$P_Academico->Condicion_Laboral}}">
-                                        </div>
-    
-                                        <div class="form-group col-md-6">
-                                            <label for="Documento_ID">Documento de Identificación</label>
-                                            <select  class="custom-select my-1 mr-sm-2" name="editDocumento_ID" required >
-    
-                                                <option value="{{$P_Academico->Documento_De_Identificacion}}">{{$P_Academico->Documento_De_Identificacion}} </option>
-                                                <option value="C">C - Cédula</option>
-                                                <option value="P">P - Pasaporte</option>
-                                            </select>
-    
-                                        </div>
-    
-                                        <div class="form-group col-md-6">
-                                            <label for="NroCedula">Número de Cédulo/Pasaporte</label>
-                                            <input type="text" class="form-control" id="NroCedula" name="editNroCedula" placeholder="Ej:12345678"    value="{{$P_Academico->CI}}">
+                                            <label for="Fecha">Fecha de ingreso</label>
+                                            <input type="date" class="form-control" name="EditFecha_de_Ingreso" placeholder="Fecha de ingreso" required value="{{$P_Academico->Fecha_de_Ingreso}}">
                                         </div>
     
                                         <div class="form-group col-md-6">
                                             <label for="CategoriaP_A">Categoría</label>
-                                            <input type="text" class="form-control" name="editCategoriaP_A" placeholder="2" required  value="{{$P_Academico->Categoria}}">
+                                            <input type="text" class="form-control" name="EditCategoria" placeholder="2" required value="{{$P_Academico->Categoria}}">
                                         </div>
     
                                         <div class="form-group col-md-6">
-                                            <label for="Cat_Inicial">Categória Inicial</label>
-                                            <input type="text" class="form-control" name="editCat_Inicial" placeholder="1" required  value="{{$P_Academico->Categoria_Inicial}}">
+                                            <label for="Documento_ID">Documento de Identificación</label>
+                                            <select  class="custom-select my-1 mr-sm-2" name="EditDocumento_IDAcademico" required >
+    
+                                                <option value="{{$P_Academico->Documento_IDAcademico}}">{{$P_Academico->Documento_IDAcademico}} </option>
+                                                <option value="C">C - Cédula</option>
+                                                <option value="P">P - Pasaporte</option>
+                                            </select>
                                         </div>
     
                                         <div class="form-group col-md-6">
-                                            <label for="Nombres">Nombres</label>
-                                            <input type="text" class="form-control" name="editNombres_P_Academico" placeholder="Ej: Raúl José" required  value="{{$P_Academico->Nombres}}">
-                                        </div>
-    
-                                        <div class="form-group col-md-6">
-                                            <label for="Apellidos">Apellidos</label>
-                                            <input type="text" class="form-control" name="editApellidos" placeholder="Ej:Briceño Roa" required  value="{{$P_Academico->Apellidos}}">
+                                            <label for="NroCedula">Número de Cédulo/Pasaporte</label>
+                                            <input type="text" class="form-control" id="NroCedula" name="EditNroCedulaA_O" placeholder="Ej:12345678"   value="{{$P_Academico->NroCedulaA_O}}">
                                         </div>
     
                                         <div class="form-group col-md-6">
                                             <label for="TiempodeDedicacion">Tiempo de Dedicación</label>
-                                            <input type="text" class="form-control" name="editTiempoDedicacion" placeholder="1" value="{{$P_Academico->Tiempo_Dedicacion}}">
+                                            <input type="text" class="form-control" name="EditTiempoDedicacion" placeholder="1" required value="{{$P_Academico->TiempoDedicacion}}">
                                         </div>
     
                                         <div class="form-group col-md-6">
                                             <label for="TiempoAcademico">Título Académico</label>
-                                            <input type="text" class="form-control" name="editTituloAcademico" placeholder="2" value="{{$P_Academico->TituloAcademico}}">
+                                            <input type="text" class="form-control" name="EditTituloAcademico" placeholder="2" required value="{{$P_Academico->TituloAcademico}}">
+                                        </div>
+    
+                                        <div class="form-group col-md-6">
+                                            <label for="Profesion">Profesión</label>
+                                            <input type="text" class="form-control" name="EditProfesionAcademico" placeholder="123" required value="{{$P_Academico->ProfesionAcademico}}">
+                                        </div>
+                                        
+                                        <div class="form-group col-md-6">
+                                            <label for="Adscripción">Adscripción</label>
+                                            <input type="Adscripción" class="form-control" name="EditAdscripcion" placeholder="Salud Pública" required  value="{{$P_Academico->Adscripcion}}">
+                                        </div>
+    
+                                        <div class="form-group col-md-6">
+                                            <label for="Nombres">Nombres</label>
+                                            <input type="text" class="form-control" name="EditNombresAcademico" placeholder="Ej: Raúl José" required  value="{{$P_Academico->NombresAcademico}}">
+                                        </div>
+    
+                                        <div class="form-group col-md-6">
+                                            <label for="Apellidos">Apellidos</label>
+                                            <input type="text" class="form-control" name="EditApellidosA_O" placeholder="Ej:Briceño Roa" required value="{{$P_Academico->ApellidosA_O}}">
                                         </div>
     
                                         <div class="form-group col-md-6">
                                             <label for="inputPassword4">Sexo</label>
-                                            <select  class="custom-select my-1 mr-sm-2" name="editSexo_PersonalAcademico" required  >
+                                            <select  class="custom-select my-1 mr-sm-2" name="EditSexo_PersonalAcademico" required >
     
-                                                <option value="{{$P_Academico->Sexo}}" >{{$P_Academico->Sexo}} </option>
+                                                <option value="{{$P_Academico->Sexo_PersonalAcademico}}"> {{$P_Academico->Sexo_PersonalAcademico}} </option>
                                                 <option value="0">0 - Masculino</option>
                                                 <option value="1">1 - Femenino</option>
                                             </select>
                                            
                                         </div>
     
-                                        <div class="form-group col-md-6">
-                                            <label for="Profesion">Profesión</label>
-                                            <input type="text" class="form-control" name="editProfesion" placeholder="123" required  value="{{$P_Academico->Profesion}}">
-                                        </div>
-    
+                                        
                                         <div class="form-group col-md-6">
                                             <label for="FNacimiento">Fecha de Nacimiento</label>
-                                            <input type="date" class="form-control" name="editFNacimiento" required  value="{{$P_Academico->Fecha_Nacimiento}}">
+                                            <input type="date" class="form-control" name="EditFNacimientoAcademico" required value="{{$P_Academico->FNacimientoAcademico}}">
+                                        </div>
+    
+    
+                                        <div class="form-group col-md-6">
+                                            <label for="CondicionLaboral">Comentarios</label>
+                                            <input type="text" class="form-control" name="EditComentarios" placeholder="" required value="{{$P_Academico->Comentarios}}">
                                         </div>
     
                                         <div class="form-group col-md-6">
-                                            <label for="Adscripción">Adscripción</label>
-                                            <input type="Adscripción" class="form-control" name="editAdscripción" placeholder="Salud Pública" required  value="{{$P_Academico->Adscripcion}}">
+                                            <label for="Cat_Inicial">Condicion Laboral</label>
+                                            <input type="text" class="form-control" name="EditCondicionLaboralAcademico" placeholder="1" required value="{{$P_Academico->CondicionLaboralAcademico}}">
                                         </div>
-                                                    
-                                   
-                                    </div>
     
+                                    </div>
     
                 
                                     <div class="modal-footer">
@@ -376,57 +379,57 @@
       });
 
     
-     $('#InsertPersonalAcademico').on('submit', function(e) {
+     $('#InsertPersonalAcademicoPostGrado').on('submit', function(e) {
         e.preventDefault();
        
-        let InputCod_Institucion = $('input[name=InputCod_Institucion]').val();
-        let Fecha_Ingreso = $('input[name=Fecha_Ingreso]').val();        
-        let CondicionLaboral = $('input[name=CondicionLaboral]').val();
-        let Documento_ID = $('select[name=Documento_ID]').val();
-        let CategoriaP_A = $('input[name=CategoriaP_A]').val();
-        let NroCedula = $('input[name=NroCedula]').val();
-        let Cat_Inicial = $('input[name=Cat_Inicial]').val();
-        let Nombres_P_Academico = $('input[name=Nombres_P_Academico]').val();
-        let Apellidos = $('input[name=Apellidos]').val();
+        let InputCod_InstitucionAcademico = $('input[name=InputCod_InstitucionAcademico]').val();
+        let pais_p_academicoAcademico = $('input[name=pais_p_academicoAcademico]').val();        
+        let Fecha_de_Ingreso = $('input[name=Fecha_de_Ingreso]').val();
+        let Categoria = $('input[name=Categoria]').val();
+        let Documento_IDAcademico = $('select[name=Documento_IDAcademico]').val();
+        let NroCedulaA_O = $('input[name=NroCedulaA_O]').val();
         let TiempoDedicacion = $('input[name=TiempoDedicacion]').val();
         let TituloAcademico = $('input[name=TituloAcademico]').val();
+        let ProfesionAcademico = $('input[name=ProfesionAcademico]').val();
+        let Adscripcion = $('input[name=Adscripcion]').val();
+        let NombresAcademico = $('input[name=NombresAcademico]').val();
+        let ApellidosA_O = $('input[name=ApellidosA_O]').val();
         let Sexo_PersonalAcademico = $('select[name=Sexo_PersonalAcademico]').val();
-        let Profesion = $('input[name=Profesion]').val();
-        let FNacimiento = $('input[name=FNacimiento]').val();
-        let Adscripcion = $('input[name=Adscripción]').val();
-        let Pais = $('input[name=pais_p_academico]').val();
-        
-        
-        //console.log(FNacimiento);
+        let FNacimientoAcademico = $('input[name=FNacimientoAcademico]').val();
+        let Comentarios = $('input[name=Comentarios]').val();
+        let CondicionLaboralAcademico = $('input[name=CondicionLaboralAcademico]').val();
+       
+        console.log(InputCod_InstitucionAcademico);
         
     
           /*  $("#butsave").attr("disabled", "disabled"); */
             $.ajax({
-                url:"{{route('add.PersonalAcademicoPregrado')}}",
+                url:"{{route('add.PersonalAcademicoPostGrado')}}",
                 type: "POST",
                 data: {
-                    InputCod_Institucion: InputCod_Institucion,
-                    CondicionLaboral:CondicionLaboral,
-                    Documento_ID:Documento_ID,
-                    CategoriaP_A:CategoriaP_A,
-                    NroCedula:NroCedula,
-                    Cat_Inicial:Cat_Inicial,
-                    Nombres_P_Academico:Nombres_P_Academico,
-                    Apellidos:Apellidos,
+                    InputCod_InstitucionAcademico: InputCod_InstitucionAcademico,
+                    pais_p_academicoAcademico:pais_p_academicoAcademico,
+                    Fecha_de_Ingreso:Fecha_de_Ingreso,
+                    Categoria:Categoria,
+                    Documento_IDAcademico:Documento_IDAcademico,
+                    NroCedulaA_O:NroCedulaA_O,
                     TiempoDedicacion:TiempoDedicacion,
                     TituloAcademico:TituloAcademico,
+                    ProfesionAcademico:ProfesionAcademico,
+                    Adscripcion:Adscripcion,
+                    NombresAcademico:NombresAcademico,
+                    ApellidosA_O:ApellidosA_O,
                     Sexo_PersonalAcademico:Sexo_PersonalAcademico,
-                    Profesion:Profesion,
-                    FNacimiento:FNacimiento,
-                    Adscripcion:Adscripcion,  
-                    Pais:Pais,
-                    Fecha_Ingreso:Fecha_Ingreso,
+                    FNacimientoAcademico:FNacimientoAcademico,  
+                    Comentarios:Comentarios,
+                    CondicionLaboralAcademico:CondicionLaboralAcademico,
 
                   
                 },
     
                 success:function(response){
                     console.log(response)
+                    
                     swal({
                     title: "Excelente!",
                     text: "La información se ha actualizado de forma correcta!",
@@ -443,7 +446,7 @@
                     }
                 }).then((redir)=>
                 {
-                        window.location.replace("/pa_pregrado"); 
+                        window.location.replace("/registro_p_postgrado"); 
                 });
                     
                     
@@ -455,7 +458,8 @@
          });
     });
 
-    $('#PersonalAdmyObreroEdit_').submit(function(e){
+    $('.PersonAdPostG').submit(function(e){
+        
         e.preventDefault();
         swal({
                     title: "Excelente!",
@@ -477,9 +481,6 @@
                 });
 
 })
-    
-
-
 
     $('.eliminar_P_Academico_Pregrado').submit(function(e){
         e.preventDefault();
@@ -517,6 +518,8 @@
         });
 
     });
+
+
 
 
 </script>

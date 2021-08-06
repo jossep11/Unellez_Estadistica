@@ -58,7 +58,7 @@ function GetRutaName() {
     $(document).ready(function() {
         $(TableBasicxz).DataTable({   
             scrollX:        true,
-            lengthMenu: [[10, 25, 50, -1], [10, 25, 50, 'Todos']], 
+            lengthMenu: [[5, 10, 25, -1], [5, 10, 25, 'Todos']], 
             "ordering": false,             
             language: {
                 search: "Buscar:",
@@ -206,7 +206,7 @@ function IndexMatrizDAFO() {
 }
 IndexMatrizDAFO();
 
-
+/**
 
 CollapseTwo = document.querySelector('#collapseTwo');
 
@@ -219,3 +219,4 @@ document.addEventListener("DOMContentLoaded", function(){
         }, 
         100);
     });
+ */

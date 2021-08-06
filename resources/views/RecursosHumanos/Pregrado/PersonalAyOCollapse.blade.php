@@ -17,8 +17,9 @@
                 <div class="barra">
                 <h1 id="TablePersonalAO" >Tabla de Datos del Personal Administrativo y Obrero</h1>    
                 <!-- Button trigger modal -->
+                @role("user")
                 <a href="#" class="btn_agregar_azul" data-toggle="modal" data-target="#AgregarAdmyObrero"> <i class="fas fa-plus"></i> <div> Añadir nuevo</div></a>
-                
+                @endrole
                 </div>
             </div>
 
@@ -155,6 +156,8 @@
                 </div>
             
 
+{{-- Take a look --}}
+                {{-- here add the tag table responsive --}}
 
             <table id="basic-datatables1" class="basic-datatables display table table-striped table-hover table-boder-radius serial nowrap" style="width: 100%">
                 <thead>
@@ -243,7 +246,7 @@
                        
                         <div class="modal-body">
                     
-                            <form id="PersonalAdmyObreroEdit{{$P_Adm_Obrero->id}}" action="{{route('pao_pregrado.update', $P_Adm_Obrero->id)}}"  method="POST"> > 
+                            <form id="PersonalAdmyObreroEdit" action="{{route('pao_pregrado.update', $P_Adm_Obrero->id)}}"  method="POST"> 
                                 {{ csrf_field() }}  {{   method_field('PUT')   }}
 
             
@@ -503,6 +506,27 @@
     });
 
 
+    $('#PersonalAdmyObreroEdit').submit(function(e){
+        e.preventDefault();
+        swal({
+                    title: "Excelente!",
+                    text: "La información se ha actualizado de forma correcta!",
+                    icon: "success",
+                    buttons: {
+                        confirm: {
+                            text: "Ok",
+                            value: true,
+                            visible: true,
+                            className: "btn btn-success",
+                            closeModal: true
+                           
+                        }
+                    }
+                }).then((redir)=>
+                {
+                        this.submit();
+                });
 
+})
 
 </script>
