@@ -74,7 +74,7 @@ Route::get('/Reporte_Postgrado', [PersonalAdmObreroPostGController::class, 'expo
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Login');
 
     
     
