@@ -154,7 +154,7 @@
                 </div>
             
 
-             <div class="table-responsive">
+            <div class="table-responsive">
             <table id="basic-datatables0" class="basic-datatables display table table-striped table-hover table-boder-radius serial nowrap" style="width: 100%">
                 <thead>
                     {{-- insertion of items --}}
@@ -361,7 +361,7 @@
 
                 </tbody>
             </table>
-        </div>
+            </div>
         </div>
     </div>
 </div>
