@@ -176,7 +176,9 @@
                         <th>Título Académico</th>
                         <th>Profesión</th>
                         <th>Adscripción</th>
+                        @role("user")
                         <th>Acciones</th>
+                        @endrole
                     </tr>
                 </thead>
                 {{--database data subtraction --}}
@@ -205,7 +207,8 @@
                         <td>{{$P_Academico->TituloAcademico}}</td>
                         <td>{{$P_Academico->Profesion}}</td>
                         <td>{{$P_Academico->Adscripcion}}</td>                   
-
+                    
+                    @role("user")
                     <td>
                         <form class="eliminar_P_Academico_Pregrado" action="{{route ('pa_pregrado.destroy', $P_Academico->id)}}" method="POST">
                         <div class="form-button-action">    
@@ -222,7 +225,7 @@
                         </form>
         
                     </td>
-
+                    @endrole
 
 
                 </tr>

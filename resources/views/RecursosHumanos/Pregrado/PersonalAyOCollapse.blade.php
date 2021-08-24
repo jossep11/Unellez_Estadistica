@@ -180,7 +180,9 @@
                         <th>Profesión</th>
                         <th>Ocupación</th>
                         <th>Capacitación</th>
+                        @role("user")
                         <th>Acciones</th>
+                        @endrole
                     </tr>
                 </thead>
                 {{--database data subtraction --}}
@@ -210,9 +212,8 @@
                         <td>{{$P_Adm_Obrero->OcupacionA_O}}</td>
                         <td>{{$P_Adm_Obrero->CapacitacionA_O}}</td>
 
-                    
-
-                    <td>
+                    @role("user")
+                     <td>
                         <form class="eliminar_P_Adm_Obrero_Pregrado" action="{{route ('pao_pregrado.destroy', $P_Adm_Obrero->id)}}" method="POST">
                         <div class="form-button-action">    
                         
@@ -228,7 +229,7 @@
                         </form>
         
                     </td>
-
+                    @endrole
 
 
                 </tr>

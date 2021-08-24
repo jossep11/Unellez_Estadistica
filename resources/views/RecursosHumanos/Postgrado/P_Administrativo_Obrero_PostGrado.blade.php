@@ -172,7 +172,9 @@
                         <th>Nivel de Instrucción Educativa</th>
                         <th>Capacitación</th>
                         <th>Comentarios</th>
+                    @role("user")
                         <th>Acciones</th>
+                     @endrole
                     </tr>
                 </thead>
                 {{--database data subtraction --}}
@@ -204,7 +206,7 @@
                        
 
                     
-
+                    @role("user")
                     <td>
                         <form class="eliminar_P_Academico_Pregrado" action="{{route ('registro_paobrero_postgrado.destroy', $P_Academico->id)}}" method="POST">
                         <div class="form-button-action">    
@@ -218,9 +220,8 @@
                         
                         </div>
                         </form>
-        
                     </td>
-
+                    @endrole
 
 
                 </tr>

@@ -32,7 +32,6 @@
 
     @yield('css')
     <link rel="stylesheet" href="{{secure_asset ('css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{secure_asset ('css/atlantis.min.css') }}">
     <link rel="stylesheet" href="{{secure_asset ('css/atlantis.css') }}">
     <link rel="stylesheet" href="{{secure_asset ('css/styles.css') }}">
    
