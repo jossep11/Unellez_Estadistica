@@ -1,5 +1,5 @@
+var item1 = document.querySelectorAll(".nro_item1");
 var item = document.querySelectorAll(".nro_item");
-let id = document.querySelector(".IdentificadorIndex");
 var td = document.querySelectorAll("#basic-datatables td");
 const menu = document.querySelector('#headingFive');
 const mostrar = document.querySelector('.collapse5');
@@ -10,6 +10,7 @@ let tablax = document.querySelector("#tablax");
 let checkseleccionado = document.querySelectorAll('.checkseleccionado');
 
 
+
 let RutaName=GetRutaName();
 
 
@@ -18,11 +19,16 @@ let RutaName=GetRutaName();
  * letter of the text that it's being working --jossep11 (jp)
  */
 
-if(id){
+//Index Personal Academico
     item.forEach(function (valor, indice, item1) {
-        valor.innerHTML = `${id.textContent.charAt(0)}${indice + 1}`;
+        valor.innerHTML = `N${indice + 1}`;
     });
-}
+
+//Index Personal Administrativo y Obrero  
+    item1.forEach(function (valor, indice, item1) {
+        valor.innerHTML = `N${indice + 1}`;
+    });
+
 
 /** With this function I can get the name where I am located rn --jossep11 (jp)
  * So I can compare it later on
@@ -44,42 +50,15 @@ function GetRutaName() {
 
 
 
-
-if(RutaName==='matrizdafo'){
-//lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 'Todos']]
-
-//with this for I can put a number on the id so i can change it and dont initialize again the datatable
-for (let i = 1; i <= 4; i++) {
-    let TableBasicx = '#basic-datatables'+[i];
-$(document).ready(function() {
-    $(TableBasicx).DataTable({
-        lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 'Todos']],
-        "ordering": false,        
-        language: {
-            search: "Buscar:",
-
-            paginate:{previous:"Anterior", next:"Siguiente" },
-
-            lengthMenu: "Ver _MENU_ registros",
-
-            info: "Mostrando _START_-_END_ de _TOTAL_ registros",
-
-            zeroRecords: "No hay registros encontrados",
-
-            infoEmpty: "",
-
-            infoFiltered:"(Filtrado de _MAX_ registros)",
-        }
-        ,
-    });
-});
-}
-}
-
-else{
+//with this i just have to list the tables with the same name, just sum the counter
+    let TableBasicx= document.querySelectorAll(".basic-datatables");
+    TableBasicx.forEach(function (valor, indice, item1) {
+        let TableBasicxz = '#basic-datatables'+[indice];
+       
     $(document).ready(function() {
-        $('#basic-datatables').DataTable({   
-            lengthMenu: [[10, 25, 50, -1], [10, 25, 50, 'Todos']], 
+        $(TableBasicxz).DataTable({   
+            scrollX:        true,
+            lengthMenu: [[5, 10, 25, -1], [5, 10, 25, 'Todos']], 
             "ordering": false,             
             language: {
                 search: "Buscar:",
@@ -103,35 +82,8 @@ else{
         });   
     
     })
-}
-
-$(document).ready(function() {
-    $('#PersonalAcademico').DataTable({   
-        scrollX:        true,
-        lengthMenu: [[10, 25, 50, -1], [10, 25, 50, 'Todos']], 
-        "ordering": false,             
-        language: {
-            search: "Buscar:",
-
-        paginate:{previous:"Anterior", next:"Siguiente" },
-
-        lengthMenu: "Ver _MENU_ registros",
-
-        info: "Mostrando _START_-_END_ de _TOTAL_ registros",
-
-        zeroRecords: "No hay registros encontrados",
-
-        infoEmpty: "",
-
-        infoFiltered:"(Filtrado de _MAX_ registros)",
-           
-        },
-        
-    
-
-    });   
-
 });
+
 
 
 
@@ -253,3 +205,18 @@ function IndexMatrizDAFO() {
 
 }
 IndexMatrizDAFO();
+
+/**
+
+CollapseTwo = document.querySelector('#collapseTwo');
+
+
+document.addEventListener("DOMContentLoaded", function(){
+    
+    setTimeout(
+        function() {
+            CollapseTwo.classList.remove("show")   
+        }, 
+        100);
+    });
+ */

@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="{{asset('js/core/jquery.3.2.1.min.js')}}"></script>
+    <script src="{{secure_asset('js/core/jquery.3.2.1.min.js')}}"></script>
     
    
     <meta name="csrf-token" content="{{ csrf_token() }}">
   
     
 
-    <script src="{{asset ('js/plugin/webfont/webfont.min.js')}}"></script>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="{{secure_asset ('js/plugin/webfont/webfont.min.js')}}"></script>
+    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
 
     <script>
         WebFont.load({
@@ -22,7 +22,7 @@
             },
             custom: {
                 "families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"],
-                urls: ["{{asset ('css/app.css')}}"]
+                urls: ["{{secure_asset ('css/app.css')}}"]
             },
             active: function() {
                 sessionStorage.fonts = true;
@@ -31,13 +31,12 @@
     </script>
 
     @yield('css')
-    <link rel="stylesheet" href="{{asset ('css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{asset ('css/atlantis.min.css') }}">
-    <link rel="stylesheet" href="{{asset ('css/atlantis.css') }}">
-    <link rel="stylesheet" href="{{asset ('css/styles.css') }}">
+    <link rel="stylesheet" href="{{secure_asset ('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{secure_asset ('css/atlantis.css') }}">
+    <link rel="stylesheet" href="{{secure_asset ('css/styles.css') }}">
    
 
-    <title>Test1 </title>
+    <title>Estadística </title>
 </head>
 
 <body>
@@ -47,8 +46,12 @@
             <!-- Logo Header -->
             <div class="logo-header" data-background-color="blue">
 
-                <a href="index.html" class="logo">
-                    <img src="{{asset('img/logo.svg')}}" alt="navbar brand" class="navbar-brand">
+                <a href="" class="logo">
+                
+                    <img src="{{secure_asset('logo1.png')}}" alt="logo" class="navbar-brand">
+                    <span>
+                    CONOPAIMA
+                    </span>
                 </a>
                 <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon">
@@ -78,29 +81,29 @@
                         <li class="nav-item dropdown hidden-caret">
                             <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
                                 <div class="avatar-sm">
-                                    <img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+                                    <i class="fas fa-caret-down logout"></i>
                                 </div>
                             </a>
                             <ul class="dropdown-menu dropdown-user animated fadeIn">
                                 <div class="dropdown-user-scroll scrollbar-outer">
                                     <li>
                                         <div class="user-box">
-                                            <div class="avatar-lg"><img src="../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
+                                            <i class="fa fa-user" ></i>  
                                             <div class="u-text">
-                                                <h4>Hizrian</h4>
-                                                <p class="text-muted">hello@example.com</p><a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
+                                                <h4>{{$user = auth()->user()->name}} {{$user = auth()->user()->Apellido}}</h4>
+                                                <p class="text-muted">{{$user = auth()->user()->email}}</p> 
                                             </div>
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">My Profile</a>
-                                        <a class="dropdown-item" href="#">My Balance</a>
-                                        <a class="dropdown-item" href="#">Inbox</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Account Setting</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Logout</a>
+                                        
+                                        <form  action="{{route("logout")}}" method="post">
+                                        
+                                            @csrf
+                                        
+                                       
+                                         <a class="dropdown-item" href="#" onclick="this.closest('form').submit()">Cerrar sesión</a>
+                                     </form>
                                     </li>
                                 </div>
                             </ul>
@@ -116,12 +119,18 @@
                 <div class="sidebar-content">
                     <div class="user">
                         <div class="avatar-sm float-left mr-2">
-                            <img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+                            <i class="fa fa-user" ></i>  
                         </div>
                         <div class="info">
                             <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                                 <span>
-                                    Hizrian
+                                    {{$user = auth()->user()->Nombres}}
+                                    <br>
+                                    @role('admin')
+                                    Administrador
+                                    @else
+                                    Usuario
+                                    @endrole
                                     {{--The next line show the user's name conected--}}
                                     {{-- <span class="user-level">{{$user = auth()->user()->name}}</span>--}}
                                 <span class="caret"></span>
@@ -130,32 +139,16 @@
                             <div class="clearfix"></div>
 
                             <div class="collapse in" id="collapseExample">
-                                <ul class="nav">
-                                    <li>
-                                        <a href="#profile">
-                                            <span class="link-collapse">My Profile</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#edit">
-                                            <span class="link-collapse">Edit Profile</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#settings">
-                                            <span class="link-collapse">Settings</span>
-                                        </a>
-                                    </li>
-                                </ul>
+            
                             </div>
                         </div>
                     </div>
 
                     <ul class="nav nav-primary">
                         <li class="nav-item active">
-                            <a class="text-align-center" href="" >
+                            <a class="text-align-center" href="javascript:void(0);" >
                                 <i class="fas fa-home"></i>
-                            <p class="ProcesoAnalitico">Estadistica</p>
+                            <p class="ProcesoAnalitico">Estadística</p>
                             </a>
                        
                         </li>
@@ -164,39 +157,53 @@
                             <span class="sidebar-mini-icon">
                                 <i class="fa fa-ellipsis-h"></i>
                             </span>
-                            <h4 class="text-section">VPDS VICERECTORADO DE PLANIFICACIÓN Y DESARROLLO SOCIAL</h4>
+                            
                         </li>
 
 
                         {{-- @role('S_Admin|viewer') --}}
                                                   
                     <li class="nav-item ">
-                        <a href="/debilidades">
+                        <a data-toggle="collapse" href="#RecusosHumanos">
                             <i class="fas fa-user-circle"></i>
-                            <p>Recursos humanos</p>
+                            <p>VPDS</p>
                             <span class="caret"></span>
                         </a>
 
+                        <div class="collapse show" id="RecusosHumanos">
+                            <ul class="nav nav-collapse">
+
+                                <li>
+                                    <a data-toggle="collapse show" href="#">
+                                        <span class="sub-item">Recusos Humanos</span>
+                                        <span class="caret"></span>
+                                    </a>
+                                    <div class="collapse show" id="subnav1">
+                                        <ul class="nav nav-collapse subnav">
+                                            <li>
+                                                <a href="/pa_pregrado">
+                                                    <span class="sub-item">Pregrado</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/registro_p_postgrado">
+                                                    <span class="sub-item">Postgrado</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                              
+                            </ul>
+
+
+
+                        </div>
+                       
+    
+
                     </li>
-
-             
-                    <li class="nav-item">
-                        <a href="/oportunidades">
-                            <i class="fas fa-address-card"></i>
-                            <p>ARSE</p>
-                            <span class="caret"></span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="/fortaleza">
-                            <i class="fas fa-graduation-cap"></i>
-                            <p>Estudios Avanzados</p>
-                            <span class="caret"></span>
-                        </a>
-                    </li>
-
-
+            
 
                         {{-- @endrole --}}
 
@@ -222,43 +229,44 @@
 
     {{--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>   --}} 
    
-    <script src="{{asset('js/core/popper.min.js')}}"></script>
-    <script src="{{asset('js/core/bootstrap.min.js')}}"></script>
+    <script src="{{secure_asset('js/core/popper.min.js')}}"></script>
+    <script src="{{secure_asset('js/core/bootstrap.min.js')}}"></script>
 
     <!-- jQuery UI -->
-    <script src="{{asset('js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>
-    <script src="{{asset('js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js')}}"></script>
+    <script src="{{secure_asset('js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>
+    <script src="{{secure_asset('js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js')}}"></script>
 
     <!-- jQuery Scrollbar -->
-    <script src="{{asset('js/plugin/jquery-scrollbar/jquery.scrollbar.min.js')}}"></script>
+    <script src="{{secure_asset('js/plugin/jquery-scrollbar/jquery.scrollbar.min.js')}}"></script>
 
     <!-- Chart JS -->
-    <script src="{{asset('js/plugin/chart.js/chart.min.js')}}"></script>
+    <script src="{{secure_asset('js/plugin/chart.js/chart.min.js')}}"></script>
 
     <!-- jQuery Sparkline -->
-    {{-- <script src="{{asset('js/plugin/jquery.sparkline/jquery.sparkline.min.js')}}"></script> --}}
+    {{-- <script src="{{secure_asset('js/plugin/jquery.sparkline/jquery.sparkline.min.js')}}"></script> --}}
 
     <!-- Chart Circle -->
-    <script src="{{asset('js/plugin/chart-circle/circles.min.js')}}"></script>
+    <script src="{{secure_asset('js/plugin/chart-circle/circles.min.js')}}"></script>
 
 
     <!-- Datatables -->
-    <script src="{{asset('js/plugin/datatables/datatables.min.js')}}"></script>
+    <script src="{{secure_asset('js/plugin/datatables/datatables.min.js')}}"></script>
 
     <!-- Bootstrap Notify -->
-    <script src="{{asset('js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
+    <script src="{{secure_asset('js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
 
    
     <!-- Sweet Alert -->
-    <script src="{{asset('js/plugin/sweetalert/sweetalert.min.js')}}"></script>
+    <script src="{{secure_asset('js/plugin/sweetalert/sweetalert.min.js')}}"></script>
 
     <!-- Atlantis JS -->
-    <script src="{{asset('js/atlantis.js')}}"></script>
+    <script src="{{secure_asset('js/atlantis.js')}}"></script>
 
-    <script src="{{asset('js/IdentificadorIndex.js')}}"></script>    
+    <script src="{{secure_asset('js/IdentificadorIndex.js')}}"></script>    
     
-    <script src="{{asset('js/validation.js')}}"></script>   
-    <script src="{{asset('js/Jp.js')}}"></script>   
+    <script src="{{secure_asset('js/validation.js')}}"></script>   
+    
+    <script src="{{secure_asset('js/Jp.js')}}"></script>   
 
 
 </body>

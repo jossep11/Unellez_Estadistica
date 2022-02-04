@@ -10,20 +10,19 @@
     <div class="card">
         <div class="card-header">
             <div class="barra">
-            <h1 id="" class="IdentificadorIndex">Recusos humanos-Pregrado</h1>    
-            <!-- Button trigger modal -->
-        
-            
+            <h1 id="" class="IdentificadorIndex">Recusos humanos-Pregrado</h1>  
+            <a href="/Reporte_Pregrado" class="barra generalxls"><i class="fas fa-file-excel"></i> <div>Generar XLSX</div></a>  
+            <!-- Button trigger modal -->            
             </div>
         </div>
       
         <div class="accordion accordion-secondary">
            
             {{-- Personal Academico --}}
-            @include('RecursosHumanos.PersonalAcademicoCollapse')
+            @include('RecursosHumanos.Pregrado.PersonalAcademicoCollapse')
 
            {{-- Personal administrativo y obrero --}}
-           @include('RecursosHumanos.PersonalAyOCollapse')
+           @include('RecursosHumanos.Pregrado.PersonalAyOCollapse')
            
         </div>
 

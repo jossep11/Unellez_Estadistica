@@ -24,7 +24,7 @@
 
 
 
-   {{-- llamado del modal --}}
+   
                 <!-- Modal data insertion  -->
                 <div class="modal fade" id="AgregarPersonalAcademico" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -39,7 +39,7 @@
                             <div class="modal-body">
                         
                                 <form id="InsertPersonalAcademico" > 
-                                    {{ csrf_field() }}
+                                    <input type="hidden" name="_token" value="RJKCKZWt1NU2w9n245ZZANFWxfM6o84W0WLqdAVA">
 
    
                                 <div class="form-row">
@@ -148,7 +148,7 @@
 
             <table id="PersonalAcademico" class="display table table-striped table-hover table-boder-radius serial nowrap" style="width: 100%">
                 <thead>
-                    {{-- insertion of items --}}
+                    
                     <tr>
                         <th>Nº ítem</th>
                         <th>Codígo de la Institucaón</th>
@@ -170,44 +170,41 @@
                         <th>Acciones</th>
                     </tr>
                 </thead>
-                {{--database data subtraction --}}
+                
                 <tbody>         
-                {{-- Data extraction from database --}}
+                
               
-                @foreach($PersonalAcademico as $P_Academico)
-                <tr>
+                                <tr>
                    <td class="nro_item_center" id="tr_">
                       <div id="" class="nro_item"> </div>
                     </td>
                        
-                        <td>{{$P_Academico->Institucion_code}}</td>
-                        <td>{{$P_Academico->Pais}}</td>
-                        <td>{{$P_Academico->Documento_De_Identificacion}}</td>
-                        <td>{{$P_Academico->CI}}</td>
-                        <td>{{$P_Academico->Apellidos}}</td>
-                        <td>{{$P_Academico->Nombres}}</td>
-                        <td>{{$P_Academico->Sexo}}</td>
-                        <td>{{$P_Academico->Fecha_Nacimiento}}</td>
-                        <td>{{$P_Academico->Fecha_Ingreso}}</td>
-                        <td>{{$P_Academico->Condicion_Laboral}}</td>
-                        <td>{{$P_Academico->Categoria}}</td>
-                        <td>{{$P_Academico->Categoria_Inicial}}</td>
-                        <td>{{$P_Academico->Tiempo_Dedicacion}}</td>
-                        <td>{{$P_Academico->TituloAcademico}}</td>
-                        <td>{{$P_Academico->Profesion}}</td>
-                        <td>{{$P_Academico->Adscripcion}}</td>
+                        <td>12</td>
+                        <td>12</td>
+                        <td>21</td>
+                        <td>12</td>
+                        <td>12</td>
+                        <td>12</td>
+                        <td>1</td>
+                        <td>2021-07-30</td>
+                        <td>2021-07-09</td>
+                        <td>12</td>
+                        <td>12</td>
+                        <td>12</td>
+                        <td>12</td>
+                        <td>12</td>
+                        <td>12</td>
+                        <td>12</td>
 
                     
 
                     <td>
-                        <form action="{{route ('personalacademico.destroy', $P_Academico->id)}}" method="POST">
+                        <form action="http://127.0.0.1:8000/personalacademico/5" method="POST">
                         <div class="form-button-action">    
                         
-                         <a href="#" class="btn btn-link btn-primary" title="Editar" data-toggle="modal"  data-target="#editPersonalAcademico{{$P_Academico->id}}"><i class="fa fa-edit"></i></a>
+                         <a href="#" class="btn btn-link btn-primary" title="Editar" data-toggle="modal"  data-target="#editPersonalAcademico5"><i class="fa fa-edit"></i></a>
                           
-                            @csrf
-                            @method('DELETE')
-                        <button class="btn btn-link btn-danger" title="Eliminar" type="submit" >
+                            <input type="hidden" name="_token" value="RJKCKZWt1NU2w9n245ZZANFWxfM6o84W0WLqdAVA">                            <input type="hidden" name="_method" value="DELETE">                        <button class="btn btn-link btn-danger" title="Eliminar" type="submit" >
                             <i class="fa fa-times"></i>
                         </button>
                         
@@ -222,8 +219,187 @@
 
                 
 
-                @endforeach
-            
+                                <tr>
+                   <td class="nro_item_center" id="tr_">
+                      <div id="" class="nro_item"> </div>
+                    </td>
+                       
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>1</td>
+                        <td>2021-07-16</td>
+                        <td>2021-07-08</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+
+                    
+
+                    <td>
+                        <form action="http://127.0.0.1:8000/personalacademico/7" method="POST">
+                        <div class="form-button-action">    
+                        
+                         <a href="#" class="btn btn-link btn-primary" title="Editar" data-toggle="modal"  data-target="#editPersonalAcademico7"><i class="fa fa-edit"></i></a>
+                          
+                            <input type="hidden" name="_token" value="RJKCKZWt1NU2w9n245ZZANFWxfM6o84W0WLqdAVA">                            <input type="hidden" name="_method" value="DELETE">                        <button class="btn btn-link btn-danger" title="Eliminar" type="submit" >
+                            <i class="fa fa-times"></i>
+                        </button>
+                        
+                        </div>
+                        </form>
+        
+                    </td>
+
+
+
+                </tr>
+
+                
+
+                                <tr>
+                   <td class="nro_item_center" id="tr_">
+                      <div id="" class="nro_item"> </div>
+                    </td>
+                       
+                        <td>123</td>
+                        <td>eqwe</td>
+                        <td>weqwe</td>
+                        <td>qweq</td>
+                        <td>qwe</td>
+                        <td>qwe</td>
+                        <td>1</td>
+                        <td>2021-07-23</td>
+                        <td>2021-07-01</td>
+                        <td>qweq</td>
+                        <td>qwe</td>
+                        <td>weqw</td>
+                        <td>qwe</td>
+                        <td>qwe</td>
+                        <td>qwe</td>
+                        <td>qwe</td>
+
+                    
+
+                    <td>
+                        <form action="http://127.0.0.1:8000/personalacademico/8" method="POST">
+                        <div class="form-button-action">    
+                        
+                         <a href="#" class="btn btn-link btn-primary" title="Editar" data-toggle="modal"  data-target="#editPersonalAcademico8"><i class="fa fa-edit"></i></a>
+                          
+                            <input type="hidden" name="_token" value="RJKCKZWt1NU2w9n245ZZANFWxfM6o84W0WLqdAVA">                            <input type="hidden" name="_method" value="DELETE">                        <button class="btn btn-link btn-danger" title="Eliminar" type="submit" >
+                            <i class="fa fa-times"></i>
+                        </button>
+                        
+                        </div>
+                        </form>
+        
+                    </td>
+
+
+
+                </tr>
+
+                
+
+                                <tr>
+                   <td class="nro_item_center" id="tr_">
+                      <div id="" class="nro_item"> </div>
+                    </td>
+                       
+                        <td>12</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>1</td>
+                        <td>2021-07-23</td>
+                        <td>2021-07-14</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>1233</td>
+
+                    
+
+                    <td>
+                        <form action="http://127.0.0.1:8000/personalacademico/9" method="POST">
+                        <div class="form-button-action">    
+                        
+                         <a href="#" class="btn btn-link btn-primary" title="Editar" data-toggle="modal"  data-target="#editPersonalAcademico9"><i class="fa fa-edit"></i></a>
+                          
+                            <input type="hidden" name="_token" value="RJKCKZWt1NU2w9n245ZZANFWxfM6o84W0WLqdAVA">                            <input type="hidden" name="_method" value="DELETE">                        <button class="btn btn-link btn-danger" title="Eliminar" type="submit" >
+                            <i class="fa fa-times"></i>
+                        </button>
+                        
+                        </div>
+                        </form>
+        
+                    </td>
+
+
+
+                </tr>
+
+                
+
+                                <tr>
+                   <td class="nro_item_center" id="tr_">
+                      <div id="" class="nro_item"> </div>
+                    </td>
+                       
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>1</td>
+                        <td>2021-07-23</td>
+                        <td>2021-06-28</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>123</td>
+
+                    
+
+                    <td>
+                        <form action="http://127.0.0.1:8000/personalacademico/10" method="POST">
+                        <div class="form-button-action">    
+                        
+                         <a href="#" class="btn btn-link btn-primary" title="Editar" data-toggle="modal"  data-target="#editPersonalAcademico10"><i class="fa fa-edit"></i></a>
+                          
+                            <input type="hidden" name="_token" value="RJKCKZWt1NU2w9n245ZZANFWxfM6o84W0WLqdAVA">                            <input type="hidden" name="_method" value="DELETE">                        <button class="btn btn-link btn-danger" title="Eliminar" type="submit" >
+                            <i class="fa fa-times"></i>
+                        </button>
+                        
+                        </div>
+                        </form>
+        
+                    </td>
+
+
+
+                </tr>
+
+                
+
+                            
             
 
 
@@ -271,7 +447,7 @@
     
           /*  $("#butsave").attr("disabled", "disabled"); */
             $.ajax({
-                url:"{{route('add.PersonalAcademico')}}",
+                url:"http://127.0.0.1:8000/addingpersonalacademico",
                 type: "POST",
                 data: {
                     InputCod_Institucion: InputCod_Institucion,

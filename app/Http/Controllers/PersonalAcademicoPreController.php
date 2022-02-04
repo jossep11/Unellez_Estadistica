@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ProductsExport;
 use Illuminate\Http\Request;
 use App\Models\PersonalAcademico;
+use App\Exports\UsersExport;
+use App\Models\PersonalAdm_Obrero;
+use Maatwebsite\Excel\Facades\Excel;
 
-class PersonalAcademicoController extends Controller
+class PersonalAcademicoPreController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +19,9 @@ class PersonalAcademicoController extends Controller
     public function index()
     {
         $PersonalAcademico = PersonalAcademico::all();
-       return view('RecursosHumanos.PersonalAcad')->with('PersonalAcademico', $PersonalAcademico);
+        $PersonalAdm_Obrero= PersonalAdm_Obrero::all();
+       return view('RecursosHumanos.Pregrado.P_Acad_Pregrado')->with('PersonalAcademico', $PersonalAcademico)
+       ->with('PersonalAdm_Obrero', $PersonalAdm_Obrero);
     }
 
     /**
@@ -95,7 +101,29 @@ class PersonalAcademicoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $ResumenAcademicoPreG  = PersonalAcademico::find($id);
+        //echo $id;
+        $ResumenAcademicoPreG->Institucion_code=$request->get('UpdateInputCod_Institucion');
+       
+        $ResumenAcademicoPreG->Pais=$request->get('editpais_p_academico');
+        $ResumenAcademicoPreG->Documento_De_Identificacion=$request->get('editDocumento_ID');
+        $ResumenAcademicoPreG->CI=$request->get('editNroCedula');
+        $ResumenAcademicoPreG->Apellidos=$request->get('editApellidos');
+        $ResumenAcademicoPreG->Nombres=$request->get('editNombres_P_Academico');
+        $ResumenAcademicoPreG->Sexo=$request->get('editSexo_PersonalAcademico');
+        $ResumenAcademicoPreG->Fecha_Nacimiento=$request->get('editFNacimiento');
+        $ResumenAcademicoPreG->Fecha_Ingreso=$request->get('editFecha_Ingreso');
+        $ResumenAcademicoPreG->Condicion_Laboral=$request->get('editCondicionLaboral');
+        $ResumenAcademicoPreG->Categoria=$request->get('editCategoriaP_A');
+        $ResumenAcademicoPreG->Categoria_Inicial=$request->get('editCat_Inicial');
+        $ResumenAcademicoPreG->TituloAcademico=$request->get('editTituloAcademico');
+        $ResumenAcademicoPreG->Tiempo_Dedicacion=$request->get('editTiempoDedicacion');
+        $ResumenAcademicoPreG->Profesion=$request->get('editProfesion');
+        $ResumenAcademicoPreG->Adscripcion=$request->get('editAdscripción');
+       
+        $ResumenAcademicoPreG->save();
+        return redirect('/pa_pregrado');
+  
     }
 
     /**
@@ -108,6 +136,17 @@ class PersonalAcademicoController extends Controller
     {
         $PersonalAcademico = PersonalAcademico::find($id);
         $PersonalAcademico->delete();
-        return redirect('/personalacademico');
+        return redirect('/pa_pregrado');
+        
     }
+
+
+
+    public function export()  
+    {
+        return Excel::download(new ProductsExport, 'Personal_Pregrado.xlsx');
+    }
+
+
+
 }
